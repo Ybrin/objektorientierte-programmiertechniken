@@ -17,6 +17,9 @@ public class Population {
      */
     public Population(List<Group> groups){
         this.groups = groups;
+        for (Group group : this.groups) {
+            group.setPopulation(this);
+        }
     }
 
     public List<Group> getGroups() {
