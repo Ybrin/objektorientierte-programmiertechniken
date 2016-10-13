@@ -27,6 +27,10 @@ public class Group {
         this.strategy = Calculation.getGroupStrategy(this);
     }
 
+    public void simulateYearPass() {
+        this.groupsize = Calculation.calculateGroupsizeAfterAYear(this);
+    }
+
     public Strategy getStrategy() {
         return strategy;
     }

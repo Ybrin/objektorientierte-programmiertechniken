@@ -19,18 +19,7 @@ public class Calculation {
      * @return Strategy strategy of group of squirrels
      */
     public static Strategy getGroupStrategy(Group group) {
-        int ran = (int) Math.round(Math.random() * 3);
-
-        if (ran == 0) {
-            return Strategy.TOBEFED;
-        } else if (ran == 1) {
-            return Strategy.COLLECTING;
-        } else if (ran == 2) {
-            return Strategy.STEALING;
-        } else if (ran == 3) {
-            return Strategy.COMBINATING;
-        }
-        return null;
+        return Strategy.strategyForGroup(group);
     }
 
     /**
@@ -78,7 +67,7 @@ public class Calculation {
         int totalAmount = 0;
         for (Group group : population.getGroups()) {
             totalAmount += group.getCollectedFoodPerIndividual() * group.getGroupsize();
-            totalAmount += group.getHuntableFoodPerIndiviual() * group.getGroupsize();
+            // totalAmount += group.getHuntableFoodPerIndiviual() * group.getGroupsize();
         }
         return totalAmount;
     }
@@ -92,9 +81,20 @@ public class Calculation {
      */
     public static int getTotalAmountOfFoodPerGroup(Group group) {
         int totalAmount = 0;
-        totalAmount += (group.getCollectedFoodPerIndividual() * group.getGroupsize()) * group.getRecoveredOwnFood();
+        totalAmount += (int) ((group.getCollectedFoodPerIndividual() * group.getGroupsize()) * group.getRecoveredOwnFood());
         totalAmount += group.getHuntableFoodPerIndiviual() * group.getGroupsize();
-        totalAmount += Calculation.getTotalAmountOfFood(group.getPopulation()) * group.getFoundForeignFood();
+
+        // totalAmount += (int) (Calculation.getTotalAmountOfFood(group.getPopulation()) * group.getFoundForeignFood());
+        // Calculate foreign food as relative amount of food which the others lost
+        int foreign = 0;
+        for (Group g : group.getPopulation().getGroups()) {
+            foreign += (int) ((g.getCollectedFoodPerIndividual() * g.getGroupsize()) * (1 - g.getRecoveredOwnFood()));
+        }
+        foreign = foreign - (int) ((group.getCollectedFoodPerIndividual() * group.getGroupsize()) * (1 - group.getRecoveredOwnFood()));
+
+        foreign = (int) (foreign * group.getFoundForeignFood());
+
+        totalAmount += foreign;
 
         return totalAmount;
     }

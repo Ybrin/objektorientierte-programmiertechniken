@@ -11,11 +11,12 @@ import java.util.List;
 public class Test {
 
     public static void main(String[] args) {
-        Group group1 = new Group(1000, 50, 10, 0.8, 0.1, 0.13);
-        Group group2 = new Group(1000, 20, 8, 0.8, 0.4, 0.16);
-        Group group3 = new Group(1000, 40, 9, 0.8, 0.2, 0.14);
-        Group group4 = new Group(1000, 30, 20, 0.8, 0.2, 0.12);
-        Group group5 = new Group(1000, 60, 5, 0.84, 0.1, 0.15);
+        Group group1 = new Group(1000, 30, 10, 0.8, 0.1, 0.13);
+        Group group2 = new Group(1000, 15, 8, 0.8, 0.4, 0.16);
+        Group group3 = new Group(1000, 30, 9, 0.8, 0.2, 0.14);
+        Group group4 = new Group(1000, 25, 20, 0.8, 0.2, 0.12);
+        Group group5 = new Group(1000, 10, 5, 0.74, 0.1, 0.15);
+        Group group6 = new Group(1000, 10, 20, 0.85, 0.15, 0.15);
 
         List<Group> groups = new ArrayList<Group>();
 
@@ -24,14 +25,16 @@ public class Test {
         groups.add(group3);
         groups.add(group4);
         groups.add(group5);
+        groups.add(group6);
 
         Population population = new Population(groups);
 
         for (Group group : groups) {
+            System.out.println("******* The following group has the " + group.getStrategy().toString() + " Strategy! *******");
+            System.out.println("  * Starting with a group size of " + group.getGroupsize());
             for (int i = 0; i < 10; i++) {
-                int size = Calculation.calculateGroupsizeAfterAYear(group);
-                group.setGroupsize(size);
-                System.out.println(i + ": " + size);
+                group.simulateYearPass();
+                System.out.println(i + ": " + group.getGroupsize());
             }
             System.out.println("******* NEXT *******");
         }
