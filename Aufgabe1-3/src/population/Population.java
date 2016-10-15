@@ -32,7 +32,9 @@ public class Population {
      * Calculates the amount of different strategies used by all groups
      * @return amount of different strategies
      */
-    public int getDifferentStrategies(){
+    public int getDifferentStrategies() {
+        // Reset different strategies
+        differentStrategies = 0;
 
         Map<Strategy, Boolean> enumCheck = new TreeMap<>();
 
