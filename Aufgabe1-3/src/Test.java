@@ -5,10 +5,33 @@ import population.Population;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+
 /**
  * Created by Sabrina on 12.10.2016.
  */
-public class Test {
+public class Test extends JFrame{
+
+    JTable table;
+
+    public Test() {
+        setLayout(new FlowLayout());
+
+        String[] columns = {"Year", "Collected amount of food/S", "Available food/S",
+                "Recovered own food", "Found foreign food", "Death rate/S", "Groupsize"};
+
+
+        Object[][] data = {};
+
+        table = new JTable(new DefaultTableModel(data, columns));
+        table.setPreferredScrollableViewportSize(new Dimension(600, 500));
+        table.setFillsViewportHeight(true);
+
+        JScrollPane scrollpane = new JScrollPane(table);
+        add(scrollpane);
+    }
 
     public static void main(String[] args) {
         Group group1 = new Group(1000, 30, 10, 0.8, 0.1, 0.13);
@@ -29,18 +52,35 @@ public class Test {
 
         Population population = new Population(groups);
 
-        for (Group group : groups) {
-            System.out.println("******* The following group has the " + group.getStrategy().toString() + " Strategy! *******");
-            System.out.println("  * Starting with a group size of " + group.getGroupsize());
+        Test gui = new Test();
+        gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        gui.setSize(800,600);
+        gui.setVisible(true);
+        gui.setTitle("Squirrel Statistics");
+        DefaultTableModel model = (DefaultTableModel) gui.table.getModel();
+
+
+        List<Group> groupList = population.getGroups();
+
+        for (int j = 0; j < groupList.size(); j++){
+
+            Group group = groupList.get(j);
+            model.addRow(new Object[]{"Group " + (j+1)});
+
+            System.out.println("Group " + (j+1) + " uses " + group.getStrategy() + "!");
 
             int oldSize = group.getGroupsize();
-            for (int i = 0; i < 10; i++) {
+            for (int i = 1; i <= 10; i++) {
                 group.simulateYearPass();
-                System.out.println(i + ": " + group.getGroupsize());
+
+                model.addRow(new Object[]{i, group.getCollectedFoodPerIndividual(), group.getHuntableFoodPerIndiviual(), (int) (group.getRecoveredOwnFood() * 100) + "%",
+                        (int) (group.getFoundForeignFood() * 100) + "%", (int) (group.getDeathRate() * 100) + "%", group.getGroupsize()});
+
             }
             // Reset group size to have a unique simulation for the other groups
             group.setGroupsize(oldSize);
-            System.out.println("******* NEXT *******");
         }
+
+        System.out.println("Different Strategies: " + population.getDifferentStrategies());
     }
 }
