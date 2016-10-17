@@ -9,15 +9,22 @@ import javax.swing.table.DefaultTableModel;
 
 /**work dedivision:
  * Koray:
- * konzeptentwicklung
- * Grundgerüsst
+ *konzeptentwicklung
+ *Grundgerüsst der klassen (mit getter und setter)
+ *Calcuate Klasse Überarbeitet
+ *TestKlasse den Test implementiert
+ *enum Strategie implementiert
+ *
  * Sabrina:
  *konzeptentwicklung
+ *Grundgerüst der klassen(mit getter und setter)
+ *Strategie verteilung
+ *Test klasse ausgabe (gui)
  *
- * Aniela:
+ *  Aniela:
  *konzeptentwicklung
  *erstimplementierung Methoden der Calulate Klasse
- *Test klasse ausgabe
+ *Test klasse ausgabe(console)
  *
  */
 public class Test extends JFrame{
