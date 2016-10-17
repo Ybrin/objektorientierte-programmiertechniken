@@ -1,20 +1,29 @@
-import calculation.Calculation;
 import population.Group;
 import population.Population;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import java.awt.*;
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 
-/**
- * Created by Sabrina on 12.10.2016.
+/**work dedivision:
+ * Koray:
+ *konzeptentwicklung
+ *Grundgerüst der klassen(mit getter und setter)
+ *Calculate Klasse überarbeitet
+ *Test Klasse den Test implementiert
+ *
+ * Sabrina:
+ *konzeptentwicklung
+ *Grundgerüst der klassen(mit getter und setter)
+ *Strategie verteilung
+ *
+ * Aniela:
+ *konzeptentwicklung
+ *erstimplementierung Methoden der Calulate Klasse
+ *Test klasse ausgabe in Tabellenform
+ *
  */
-public class Test extends JFrame{
-
-    JTable table;
+public class Test {
 
     public Test(int j, List<Group> groupList) {
 
