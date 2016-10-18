@@ -1,11 +1,11 @@
 import population.Group;
 import population.Population;
 
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 
 /**
  * work dedivision:
@@ -66,19 +66,25 @@ public class Test extends JFrame {
 
         Population population = new Population(groups);
 
-        Test gui = new Test();
-        gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gui.setSize(800, 600);
-        gui.setVisible(true);
-        gui.setTitle("Squirrel Statistics");
-        DefaultTableModel model = (DefaultTableModel) gui.table.getModel();
+        Test gui = null;
+        try {
+            gui = new Test();
+            gui.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+            gui.setSize(800, 600);
+            gui.setVisible(true);
+            gui.setTitle("Squirrel Statistics");
+        } catch (java.awt.HeadlessException e) {
+            System.err.println("GUI not available, skipping that...");
+        }
+
+        DefaultTableModel model = (gui != null) ? (DefaultTableModel) gui.table.getModel() : null;
 
 
         List<Group> groupList = population.getGroups();
 
         for (int j = 0; j < groupList.size(); j++) {
             Group group = groupList.get(j);
-            model.addRow(new Object[]{"Group" + (j + 1)});
+            if (model != null) model.addRow(new Object[]{"Group" + (j + 1)});
 
             System.out.println();
             System.out.println("Group " + (j + 1) + " uses " + group.getStrategy() + "!");
@@ -87,8 +93,9 @@ public class Test extends JFrame {
             System.out.format("%20s%20s%20s%20s%20s%20s%20s", "Year", "Collected_Food", "Avalable_food", "Recovered_own_food", "Found_Foreign_Food", "Deaths", "Groupsize");
             for (int i = 1; i <= 10; i++) {
                 group.simulateYearPass();
-                model.addRow(new Object[]{i, group.getCollectedFoodPerIndividual(), group.getHuntableFoodPerIndiviual(), (int) (group.getRecoveredOwnFood() * 100) + "%",
-                        (int) (group.getFoundForeignFood() * 100) + "%", (int) (group.getDeathRate() * 100) + "%", group.getGroupsize()});
+                if (model != null)
+                    model.addRow(new Object[]{i, group.getCollectedFoodPerIndividual(), group.getHuntableFoodPerIndiviual(), (int) (group.getRecoveredOwnFood() * 100) + "%",
+                            (int) (group.getFoundForeignFood() * 100) + "%", (int) (group.getDeathRate() * 100) + "%", group.getGroupsize()});
 
                 System.out.println();
                 System.out.format("%20s%20s%20s%20s%20s%20s%20s", i, group.getCollectedFoodPerIndividual(), group.getHuntableFoodPerIndiviual(), (int) (group.getRecoveredOwnFood() * 100) + "%",
