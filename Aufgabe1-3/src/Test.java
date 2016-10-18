@@ -1,9 +1,6 @@
 import population.Group;
 import population.Population;
 
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,10 +24,11 @@ import java.util.List;
  * erstimplementierung Methoden der Calulate Klasse
  * Test klasse ausgabe(console)
  */
-public class Test extends JFrame {
+public class Test /*extends JFrame*/ {
 
-    JTable table;
+    // JTable table;
 
+    /*
     public Test() {
         setLayout(new FlowLayout());
 
@@ -45,7 +43,7 @@ public class Test extends JFrame {
 
         JScrollPane scrollpane = new JScrollPane(table);
         add(scrollpane);
-    }
+    }*/
 
     public static void main(String[] args) {
         Group group1 = new Group(1000, 30, 10, 0.8, 0.1, 0.13);
@@ -66,6 +64,7 @@ public class Test extends JFrame {
 
         Population population = new Population(groups);
 
+        /*
         Test gui = null;
         try {
             gui = new Test();
@@ -75,16 +74,16 @@ public class Test extends JFrame {
             gui.setTitle("Squirrel Statistics");
         } catch (java.awt.HeadlessException e) {
             System.err.println("GUI not available, skipping that...");
-        }
+        }*/
 
-        DefaultTableModel model = (gui != null) ? (DefaultTableModel) gui.table.getModel() : null;
+        // DefaultTableModel model = (gui != null) ? (DefaultTableModel) gui.table.getModel() : null;
 
 
         List<Group> groupList = population.getGroups();
 
         for (int j = 0; j < groupList.size(); j++) {
             Group group = groupList.get(j);
-            if (model != null) model.addRow(new Object[]{"Group" + (j + 1)});
+            // if (model != null) model.addRow(new Object[]{"Group" + (j + 1)});
 
             System.out.println();
             System.out.println("Group " + (j + 1) + " uses " + group.getStrategy() + "!");
@@ -93,9 +92,9 @@ public class Test extends JFrame {
             System.out.format("%20s%20s%20s%20s%20s%20s%20s", "Year", "Collected_Food", "Avalable_food", "Recovered_own_food", "Found_Foreign_Food", "Deaths", "Groupsize");
             for (int i = 1; i <= 10; i++) {
                 group.simulateYearPass();
-                if (model != null)
+                /*if (model != null)
                     model.addRow(new Object[]{i, group.getCollectedFoodPerIndividual(), group.getHuntableFoodPerIndiviual(), (int) (group.getRecoveredOwnFood() * 100) + "%",
-                            (int) (group.getFoundForeignFood() * 100) + "%", (int) (group.getDeathRate() * 100) + "%", group.getGroupsize()});
+                            (int) (group.getFoundForeignFood() * 100) + "%", (int) (group.getDeathRate() * 100) + "%", group.getGroupsize()});*/
 
                 System.out.println();
                 System.out.format("%20s%20s%20s%20s%20s%20s%20s", i, group.getCollectedFoodPerIndividual(), group.getHuntableFoodPerIndiviual(), (int) (group.getRecoveredOwnFood() * 100) + "%",
