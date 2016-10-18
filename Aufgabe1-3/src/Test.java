@@ -7,43 +7,43 @@ import java.util.List;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-/**work dedivision:
+/**
+ * work dedivision:
  * Koray:
- *konzeptentwicklung
- *Grundgerüsst der klassen (mit getter und setter)
- *Calcuate Klasse Überarbeitet
- *TestKlasse den Test implementiert
- *enum Strategie implementiert
- *
+ * konzeptentwicklung
+ * Grundgerüsst der klassen (mit getter und setter)
+ * Calcuate Klasse Überarbeitet
+ * TestKlasse den Test implementiert
+ * enum Strategie implementiert
+ * <p>
  * Sabrina:
- *konzeptentwicklung
- *Grundgerüst der klassen(mit getter und setter)
- *Strategie verteilung
- *Test klasse ausgabe (gui)
- *
- *  Aniela:
- *konzeptentwicklung
- *erstimplementierung Methoden der Calulate Klasse
- *Test klasse ausgabe(console)
- *
+ * konzeptentwicklung
+ * Grundgerüst der klassen(mit getter und setter)
+ * Strategie verteilung
+ * Test klasse ausgabe (gui)
+ * <p>
+ * Aniela:
+ * konzeptentwicklung
+ * erstimplementierung Methoden der Calulate Klasse
+ * Test klasse ausgabe(console)
  */
-public class Test extends JFrame{
+public class Test extends JFrame {
 
     JTable table;
 
     public Test() {
         setLayout(new FlowLayout());
 
-        String[] columns={"Year", "Collected amout of food/S", "Available food/S",
-            "Recoverd own food", "Found foreign food", "Death rate/S", "Groupsize"};
+        String[] columns = {"Year", "Collected amout of food/S", "Available food/S",
+                "Recoverd own food", "Found foreign food", "Death rate/S", "Groupsize"};
 
-        Object[][] data={};
+        Object[][] data = {};
 
-        table= new JTable(new DefaultTableModel(data, columns));
-        table.setPreferredScrollableViewportSize(new Dimension(600,500));
+        table = new JTable(new DefaultTableModel(data, columns));
+        table.setPreferredScrollableViewportSize(new Dimension(600, 500));
         table.setFillsViewportHeight(true);
 
-        JScrollPane scrollpane= new JScrollPane(table);
+        JScrollPane scrollpane = new JScrollPane(table);
         add(scrollpane);
     }
 
@@ -66,31 +66,31 @@ public class Test extends JFrame{
 
         Population population = new Population(groups);
 
-        Test gui= new Test();
+        Test gui = new Test();
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gui.setSize(800,600);
+        gui.setSize(800, 600);
         gui.setVisible(true);
         gui.setTitle("Squirrel Statistics");
-        DefaultTableModel model= (DefaultTableModel) gui.table.getModel();
+        DefaultTableModel model = (DefaultTableModel) gui.table.getModel();
 
 
         List<Group> groupList = population.getGroups();
 
-        for (int j = 0; j < groupList.size(); j++){
+        for (int j = 0; j < groupList.size(); j++) {
             Group group = groupList.get(j);
-            model.addRow(new Object[]{"Group" +(j+1)});
+            model.addRow(new Object[]{"Group" + (j + 1)});
 
             System.out.println();
-           System.out.println("Group " + (j+1) + " uses " + group.getStrategy() + "!");
+            System.out.println("Group " + (j + 1) + " uses " + group.getStrategy() + "!");
 
             int oldSize = group.getGroupsize();
-            System.out.format("%20s%20s%20s%20s%20s%20s%20s","Year","Collected_Food", "Avalable_food", "Recovered_own_food","Found_Foreign_Food","Deaths" ,"Groupsize");
+            System.out.format("%20s%20s%20s%20s%20s%20s%20s", "Year", "Collected_Food", "Avalable_food", "Recovered_own_food", "Found_Foreign_Food", "Deaths", "Groupsize");
             for (int i = 1; i <= 10; i++) {
                 group.simulateYearPass();
                 model.addRow(new Object[]{i, group.getCollectedFoodPerIndividual(), group.getHuntableFoodPerIndiviual(), (int) (group.getRecoveredOwnFood() * 100) + "%",
                         (int) (group.getFoundForeignFood() * 100) + "%", (int) (group.getDeathRate() * 100) + "%", group.getGroupsize()});
 
-             System.out.println();
+                System.out.println();
                 System.out.format("%20s%20s%20s%20s%20s%20s%20s", i, group.getCollectedFoodPerIndividual(), group.getHuntableFoodPerIndiviual(), (int) (group.getRecoveredOwnFood() * 100) + "%",
                         (int) (group.getFoundForeignFood() * 100) + "%", (int) (group.getDeathRate() * 100) + "%", group.getGroupsize());
 
