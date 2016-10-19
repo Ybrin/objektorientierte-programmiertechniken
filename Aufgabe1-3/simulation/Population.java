@@ -1,6 +1,7 @@
-package population;
+package simulation;
 
-import java.util.ArrayList;
+import animals.Strategy;
+
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -14,7 +15,7 @@ public class Population {
     private int differentStrategies;
 
     /**
-     * initializes new instance of population and calculates the number of different strategies
+     * initializes new instance of simulation and calculates the number of different strategies
      * @param groups
      */
     public Population(List<Group> groups){

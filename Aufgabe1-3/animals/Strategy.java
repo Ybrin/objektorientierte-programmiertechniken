@@ -1,4 +1,6 @@
-package population;
+package animals;
+
+import simulation.Group;
 
 /**
  * Created by Sabrina on 12.10.2016.

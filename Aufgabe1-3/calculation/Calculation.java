@@ -1,11 +1,9 @@
 package calculation;
 
-import population.Group;
-import population.Population;
-import population.Squirrel;
-import population.Strategy;
-
-import java.util.Map;
+import simulation.Group;
+import simulation.Population;
+import animals.Squirrel;
+import animals.Strategy;
 
 /**
  * Created by Sabrina on 12.10.2016.
@@ -60,7 +58,7 @@ public class Calculation {
     /**
      * returns the total number of food collected by all groups
      *
-     * @param population total population of squirrels
+     * @param population total simulation of squirrels
      * @return int total number of food collected by all groups
      */
     public static int getTotalAmountOfFood(Population population) {

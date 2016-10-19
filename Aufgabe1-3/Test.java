@@ -1,5 +1,5 @@
-import population.Group;
-import population.Population;
+import simulation.Group;
+import simulation.Population;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +25,35 @@ import java.util.List;
  * Test klasse ausgabe(console)
  */
 public class Test /*extends JFrame*/ {
+
+    /*
+    * ******* AUFGABE 2 *******
+    * Kern des Programms:
+    *  *) Simulation
+    *    -) Simuliert den Verlauf und die Entwicklung des Ökosystems mit verschiedenen Tieren (genauer bei Eichhörnchen)
+    *    -) Hält die Struktur des Ökosystems und der Tiere
+    *  *) Ecosystem
+    *    -) Hält Informationen zum Ökosystem (Liste von Eichhörnchen, Fressfeiden und Futterfeinden, Anzahl von neuen Futterplätzen
+    *       jedes Jahr, Anzahl von neuen Bäumen, Größe des Lebensraumes.
+    *    -) Hat Informationen zu Anzahl an Futter, mögliche unterschiedliche Lebensräume mit verschiedenen Lebensbedinungen
+    *  *) Calculation
+    *    -) Berechnet kleinere Simulationsverläufe (Bsp: Berechnung von Fortpflanzung von Eichhörnchen, Anzahl an toten Eichhörnchen
+    *       durch Umweltbedinungen oder Alter, Anzahl an neu gewachsenen Bäumen pro Jahr,...)
+    *  *) Animals (Squirrels, Fressfeinde, Futterfeinde,...)
+    *    -) Struktur und Variablen, die Eichhörnchen und andere Tiere ausmachen. Strategie um zu überleben, sich fortzupflanzen und
+    *       sich vor Fressfeinden zu schützen, Ziele im Leben, Geschlecht, Alter,...
+    * Testklasse:
+    *   *) Eine Testklasse pro Teil des Kerns, die überprüft ob sich die Klasse so verhält wie sie soll und alle Methoden das machen,
+    *      was sie sollen.
+    *   *) Eine globale 'Test' Klasse, die die Simulation steuert und alle Werte ausgibt (und richtig darstellt)
+    * Arbeitsaufteilung:
+    *   *) Sabrina: Kern des Programms: Animals + Testklasse zu Animals
+    *   *) Aniela: Kern des Programms: Ecosystem + Testklasse zum Ecosystem
+    *   *) Koray: Kern des Programms: Calculation + Testklasse zu Calculation
+    *
+    *   *) Simulation Klasse, die alles verbindet und die Testklasse, die die Simulation steuert: Gemeinsam wenn der Rest fertig ist
+    *  ******* AUFGABE 2 *******
+     */
 
     // JTable table;
 

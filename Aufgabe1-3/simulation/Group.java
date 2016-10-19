@@ -1,5 +1,6 @@
-package population;
+package simulation;
 
+import animals.Strategy;
 import calculation.Calculation;
 
 /**
