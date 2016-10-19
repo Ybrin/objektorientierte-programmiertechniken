@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="034e73b8-0f49-4e4e-a5a9-3a98b0160215" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aufgabe1-3/animals/Animal.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aufgabe1-3/animals/FodderThieve.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aufgabe1-3/animals/Predator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aufgabe1-3/ecosystem/Ecosystem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Aufgabe1-3/simulation/Simulation.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Aufgabe1-3/Test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Aufgabe1-3/calculation/Calculation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Aufgabe1-3/simulation/Group.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Aufgabe1-3/simulation/Population.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Aufgabe1-3/simulation/Squirrel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Aufgabe1-3/simulation/Strategy.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Aufgabe1-3/population/Group.java" afterPath="$PROJECT_DIR$/Aufgabe1-3/simulation/Group.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Aufgabe1-3/population/Population.java" afterPath="$PROJECT_DIR$/Aufgabe1-3/simulation/Population.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Aufgabe1-3/population/Squirrel.java" afterPath="$PROJECT_DIR$/Aufgabe1-3/animals/Squirrel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Aufgabe1-3/population/Strategy.java" afterPath="$PROJECT_DIR$/Aufgabe1-3/animals/Strategy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe1-3/Test.java" afterPath="$PROJECT_DIR$/Aufgabe1-3/Test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe1-3/calculation/Calculation.java" afterPath="$PROJECT_DIR$/Aufgabe1-3/calculation/Calculation.java" />
-    </list>
+    <list default="true" id="034e73b8-0f49-4e4e-a5a9-3a98b0160215" name="Default" comment="" />
     <ignored path="oopH32.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -768,12 +748,12 @@
       <option name="presentableId" value="Default" />
       <updated>1476824439124</updated>
       <workItem from="1476824441662" duration="234000" />
-      <workItem from="1476879919166" duration="2120000" />
+      <workItem from="1476879919166" duration="2208000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2354000" />
+    <option name="totallyTimeSpent" value="2442000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="725" extended-state="6" />
@@ -894,6 +874,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.abgabe1-3">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
