@@ -5,7 +5,9 @@ package simulation;
  */
 public class Simulation {
 
+    //uses to find living arier
     boolean inhabitedByHumans;
+    //uses to find amount of available food
     int amountHumans;
 
     public int getAmountHumans() {
