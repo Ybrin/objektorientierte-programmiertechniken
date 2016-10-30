@@ -1,21 +1,23 @@
 package animals;
 
 import animals.Animal;
+import ecosystem.Ecosystem;
 
 /**
  * Created by Sabrina on 12.10.2016.
  */
 
 /**
- * will be added: 
- * *how edible food is according to the habitat of the squirrel
- * *death rate according to the habitat, predators and fodder thieves
+ * will be added:
  * *intelligence of the squirrel (remembers where it's food is, confuses potential fodder thieves,..)
  *
  */
 
 public class Squirrel implements Animal {
 
+    Ecosystem ecosystem;
+
+    private boolean isdead;
     private boolean sex;
     private int age;
     private boolean prolific;
@@ -25,7 +27,7 @@ public class Squirrel implements Animal {
     private int needed_food_for_childbearing;
     Strategy strategyOfTheMother;
     Strategy strategy;
-    //habitat
+
 
     public Squirrel(int needed_food_for_Survival, double health, int age, boolean sex, Strategy strategyOfTheMother) {
 
@@ -35,10 +37,12 @@ public class Squirrel implements Animal {
         this.health = health;
         this.age = age;
         this.sex = sex;
+        this.isdead = false;
 
         /**
          * calculates the deathrate of a squirrel according to their strategy to survive
          */
+
         if(strategyOfTheMother.getStrategyToSurvive() == SurvivalStrategies.COLLECTING){
             deathrate = 0;
         } else if (strategyOfTheMother.getStrategyToSurvive() == SurvivalStrategies.TOBEFED){
@@ -48,7 +52,6 @@ public class Squirrel implements Animal {
         } else if (strategyOfTheMother.getStrategyToSurvive() == SurvivalStrategies.COMBINATING){
             deathrate = age*(7*Math.random());
         }
-
 
         /**
          * calculates if a squirrel is prolific
@@ -83,17 +86,58 @@ public class Squirrel implements Animal {
 
     /**
      * calculates the health of the squirrel, according to inedibility of the food
-     * @param good how eatable a food is (will be changed according to the habitat)
      */
-    private void calculateHealth(boolean good){
-        if(!good){
+    private void calculateHealth(){
+        if(!ecosystem.helthyFood()){
             this.health = health-(10*Math.random());
         }
-        calculateDeathrate();
+        this.deathrate = deathrate - health;
+        isDead();
     }
 
+
+    /**
+     * calculates the death rate for the squirrel after a year,
+     * according to strategy, predators and fodder thieves
+     */
     private void calculateDeathrate(){
-        this.deathrate = 100 - health;
+        if (strategy.getStrategyToSurvive() == SurvivalStrategies.COLLECTING){
+
+        } else if (strategy.getStrategyToSurvive() == SurvivalStrategies.TOBEFED){
+            deathrate = deathrate - (10*Math.random());
+        } else if (strategy.getStrategyToSurvive() == SurvivalStrategies.STEALING){
+            deathrate = deathrate - (5*Math.random());
+        } else if (strategy.getStrategyToSurvive() == SurvivalStrategies.COMBINATING){
+            deathrate = deathrate - (7*Math.random());
+        }
+        int allAnimals = ecosystem.getAmountFodderThieve()+ecosystem.getAmountPreditors()+ecosystem.getAmountSquirrels();
+        int predator = (allAnimals/100)*ecosystem.getAmountPreditors();
+        if(predator <= 25){
+            deathrate = deathrate - (2.5*Math.random());
+        } else if (predator <= 50){
+            deathrate = deathrate - (5*Math.random());
+        } else if (predator <= 75){
+            deathrate = deathrate - (7.5*Math.random());
+        } else {
+            deathrate = 100;
+        }
+        int fodderthives = (allAnimals/100)*ecosystem.getAmountFodderThieve();
+        if(fodderthives <= 25){
+            deathrate = deathrate - (0.5*Math.random());
+        } else if (fodderthives <= 50){
+            deathrate = deathrate - (2.5*Math.random());
+        } else if (fodderthives <= 75){
+            deathrate = deathrate - (5*Math.random());
+        } else {
+            deathrate = deathrate - (7.5*Math.random());
+        }
+        isDead();
+    }
+
+    private void isDead(){
+        if(deathrate == 100){
+            isdead = true;
+        }
     }
 
     public double getHealth() {
