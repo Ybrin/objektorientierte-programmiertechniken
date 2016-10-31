@@ -27,6 +27,17 @@ import java.util.List;
 public class Test /*extends JFrame*/ {
 
     /*
+    * ABGABE 31.10.2016
+    *
+    * -) Code ist noch nicht ausführbar, Testklassen fehlen.
+    * -) Calculation Klasse wird noch implementiert, die anderen überarbeitet.
+    * -) Unnötige Methoden und Funktionen werden gelöscht
+    * -) Einiges was in die Calculation Klasse kommen sollte wird jetzt in die einzelnen zugehörigen Klassen verschoben
+    *
+    *
+     */
+
+    /*
     * ******* AUFGABE 2 *******
     * Kern des Programms:
     *  *) Simulation
