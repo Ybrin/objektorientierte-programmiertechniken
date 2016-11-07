@@ -16,9 +16,10 @@ public class Population {
 
     /**
      * initializes new instance of simulation and calculates the number of different strategies
+     *
      * @param groups
      */
-    public Population(List<Group> groups){
+    public Population(List<Group> groups) {
         this.groups = groups;
         for (Group group : this.groups) {
             group.setPopulation(this);
@@ -27,35 +28,5 @@ public class Population {
 
     public List<Group> getGroups() {
         return groups;
-    }
-
-    /**
-     * Calculates the amount of different strategies used by all groups
-     * @return amount of different strategies
-     */
-    public int getDifferentStrategies() {
-        // Reset different strategies
-        differentStrategies = 0;
-
-        Map<Strategy, Boolean> enumCheck = new TreeMap<>();
-
-        for(Strategy s : Strategy.values()){
-            enumCheck.put(s, false);
-        }
-
-        for (int i = 0; i < groups.size(); i++){
-            Group group = groups.get(i);
-            if(enumCheck.containsKey(group.getStrategy())){
-                enumCheck.replace(group.getStrategy(), true);
-            }
-        }
-
-        for(Strategy s : Strategy.values()){
-            if(enumCheck.get(s)){
-                differentStrategies++;
-            }
-        }
-
-        return differentStrategies;
     }
 }

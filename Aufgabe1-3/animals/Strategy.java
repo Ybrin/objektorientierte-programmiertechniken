@@ -14,13 +14,15 @@ public class Strategy {
             "achievement & observance of dominance", "many & comfortable nests"};
     private SurvivalStrategies strategyToSurvive;
 
+    public Strategy() {
+        setLifegoals();
+    }
+
 
     /**
      * chooses the number of and the life goals of a squirrel
-     * @param mother the lifegoals of the mother
-     * @return List returns a list of the lifegoals of the squirrel
      */
-    private List<String> getLifegoals(Strategy mother){
+    private void setLifegoals(){
         int numberOfLifegoals = (int)(4*Math.random());
         if(numberOfLifegoals == 0){
             numberOfLifegoals = 1;
@@ -35,7 +37,6 @@ public class Strategy {
                 }
             }
         }
-        return lifegoals;
     }
 
     public List<String> getLifegoals() {

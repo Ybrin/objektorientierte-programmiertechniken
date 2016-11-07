@@ -11,91 +11,90 @@ import animals.Strategy;
 public class Calculation {
 
     /**
-     * returns strategy of given group
+     * Try to calculate a randomised first calculation
      *
-     * @param group group of squirrels
-     * @return Strategy strategy of group of squirrels
+     * @return amount predators
      */
-    public static Strategy getGroupStrategy(Group group) {
-        return Strategy.strategyForGroup(group);
-    }
-
-    /**
-     * calculates new size of the group after one year
-     *
-     * @param group group of squirrels
-     * @return int new size of group of squirrel
-     */
-    public static int calculateGroupsizeAfterAYear(Group group) {
-        int size = group.getGroupsize();
-
-        if (size == 0) {
-            return 0;
-        }
-
-        int surviving = group.getGroupsize() - (int) (group.getGroupsize() * group.getDeathRate());
-
-        int food = Calculation.getTotalAmountOfFoodPerGroup(group);
-        int foodPerSquirrel = food / group.getGroupsize();
-        if (foodPerSquirrel > Squirrel.NEEDED_FOOD_FOR_SURVIVAL) {
-            int foodLeft = ((Calculation.getTotalAmountOfFoodPerGroup(group) / group.getGroupsize()) - Squirrel.NEEDED_FOOD_FOR_SURVIVAL) * group.getGroupsize();
-            int foodNeededPerSquirrel = Squirrel.NEEDED_FOOD_FOR_CHILDBEARING - Squirrel.NEEDED_FOOD_FOR_SURVIVAL;
-
-            int matured = foodLeft / foodNeededPerSquirrel;
-
-            // Just couples can have children
-            matured = (matured % 2 == 0) ? matured : matured - 1;
-
-            surviving += matured * Squirrel.APPROXIMATE_CHILDBIRTH;
+    private static int calculateAmoutOfPredators(int amountSquirrels, boolean isInhabitedByHumans) {
+        int amountPredators;
+        if (isInhabitedByHumans) {
+            amountPredators = (int) (amountSquirrels * (Math.random() * 0.3));
         } else {
-            surviving = food / Squirrel.NEEDED_FOOD_FOR_SURVIVAL;
+            amountPredators = (int) (amountSquirrels * (Math.random() * 0.7));
         }
 
-        return (surviving >= 0) ? surviving : 0;
+        return amountPredators;
+    }
+
+    /**
+     * Try to calculate a randomised first calculation
+     *
+     * @return amount fodder thievs
+     */
+    private static int calculateAmountOfFodderThieve(int amountSquirrels, boolean isInhabitedByHumans) {
+        int amountFodderThieve;
+        if (isInhabitedByHumans) {
+            amountFodderThieve = (int) (amountSquirrels * (Math.random() * 0.7));
+        } else {
+            amountFodderThieve = (int) (amountSquirrels * (Math.random()) * 0.5);
+        }
+
+        return amountFodderThieve;
     }
 
 
     /**
-     * returns the total number of food collected by all groups
+     * calculates the new amount of Trees
+     * seperats between inhabited places (human) and not inhabited
      *
-     * @param population total simulation of squirrels
-     * @return int total number of food collected by all groups
+     * @param amountOfLeftFood food left
+     * @return New amount of trees
      */
-    public static int getTotalAmountOfFood(Population population) {
-        int totalAmount = 0;
-        for (Group group : population.getGroups()) {
-            totalAmount += group.getCollectedFoodPerIndividual() * group.getGroupsize();
-            // totalAmount += group.getHuntableFoodPerIndiviual() * group.getGroupsize();
+    public static int getNewAmountOfTrees(int amountOfTrees, int amountOfLeftFood, boolean isInhabitedByHumans) {
+        int amountOfnewTrees;
+        if (amountOfLeftFood != 0) {
+            amountOfnewTrees = amountOfLeftFood / 2;
+        } else {
+            amountOfnewTrees = 0;
         }
-        return totalAmount;
-    }
+        if (isInhabitedByHumans) {
+            amountOfnewTrees = amountOfnewTrees - (int) (amountOfnewTrees * (Math.random() * (0.8)));
+        } else {
+            amountOfnewTrees = amountOfnewTrees - (int) (amountOfnewTrees * (Math.random() * (0.2)));
+        }
 
+        return amountOfnewTrees;
+    }
 
     /**
-     * returns the total amount of food for given group
+     * calculates the findable food resources (including findable food from human)
      *
-     * @param group group of squirrels
-     * @return int total number of food for given group
+     * @return amount of findable food in the area
      */
-    public static int getTotalAmountOfFoodPerGroup(Group group) {
-        int totalAmount = 0;
-        totalAmount += (int) ((group.getCollectedFoodPerIndividual() * group.getGroupsize()) * group.getRecoveredOwnFood());
-        totalAmount += group.getHuntableFoodPerIndiviual() * group.getGroupsize();
+    public static int getNewAmoutOfFindableFood(int amountTrees, int amountOfnewTrees, int amountHumans, boolean isInhabitedByHumans) {
+        int amountOfFindableFood;
+        amountOfFindableFood = (amountTrees - amountOfnewTrees) * 10;
 
-        // totalAmount += (int) (Calculation.getTotalAmountOfFood(group.getPopulation()) * group.getFoundForeignFood());
-        // Calculate foreign food as relative amount of food which the others lost
-        int foreign = 0;
-        for (Group g : group.getPopulation().getGroups()) {
-            foreign += (int) ((g.getCollectedFoodPerIndividual() * g.getGroupsize()) * (1 - g.getRecoveredOwnFood()));
-        }
-        foreign = foreign - (int) ((group.getCollectedFoodPerIndividual() * group.getGroupsize()) * (1 - group.getRecoveredOwnFood()));
-
-        foreign = (int) (foreign * group.getFoundForeignFood());
-
-        totalAmount += foreign;
-
-        return totalAmount;
+        return amountOfFindableFood;
     }
 
+    /**
+     * Probability depends on inhabited by humans or not
+     *
+     * @return if the food is healthy or not
+     */
+    public boolean healthyFood(boolean isInhabitedByHumans) {
+        boolean health = true;
+        if (isInhabitedByHumans) {
+            if (Math.random() * 1 > 0.6) {
+                health = false;
+            }
+        } else {
+            if ((Math.random() * 1) > 0.8) {
+                health = false;
+            }
+        }
+        return health;
+    }
 
 }
