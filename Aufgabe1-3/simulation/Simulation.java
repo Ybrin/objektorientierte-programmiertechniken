@@ -17,6 +17,7 @@ public class Simulation {
 
     private Ecosystem ecosystem;
 
+    private boolean InhabitedByHumans;
     /**
      * Initializes a new Simulation which calculates new years and the resulting amount of squirrels
      * @param initialSquirrels The initial amount of squirrels
@@ -29,14 +30,16 @@ public class Simulation {
         this.amountTrees = initialTrees;
 
         this.amountHumans = amountHumans;
-
+        this.InhabitedByHumans=isInhabitedByHumans;
         this.ecosystem = new Ecosystem(Calculation.getNewAmoutOfFindableFood(amountTrees, 0, amountHumans, isInhabitedByHumans));
+
     }
 
     // TODO Implement this
     public void calculateNewYear() {
 
     }
+
 
     // Getters
 

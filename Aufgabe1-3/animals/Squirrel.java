@@ -1,6 +1,7 @@
 package animals;
 
 import animals.Animal;
+import calculation.Calculation;
 import ecosystem.Ecosystem;
 
 /**
@@ -15,6 +16,7 @@ import ecosystem.Ecosystem;
 public class Squirrel implements Animal {
 
     Ecosystem ecosystem;
+    Calculation calculation;
 
     private boolean isdead;
     private boolean sex;
@@ -86,8 +88,8 @@ public class Squirrel implements Animal {
     /**
      * calculates the health of the squirrel, according to inedibility of the food
      */
-    private void calculateHealth() {
-        if (!ecosystem.healthyFood()) {
+    private void calculateHealth(boolean humans) {
+        if (!calculation.healthyFood(humans)) {
             this.health = health - (10 * Math.random());
         }
         this.deathrate = deathrate - health;
@@ -98,8 +100,10 @@ public class Squirrel implements Animal {
     /**
      * calculates the death rate for the squirrel after a year,
      * according to strategy, predators and fodder thieves
+     *
+     *
      */
-    private void calculateDeathrate() {
+    private void calculateDeathrate(int squirrels, boolean human) {
         if (strategy.getStrategyToSurvive() == SurvivalStrategies.COLLECTING) {
 
         } else if (strategy.getStrategyToSurvive() == SurvivalStrategies.TOBEFED) {
@@ -109,8 +113,11 @@ public class Squirrel implements Animal {
         } else if (strategy.getStrategyToSurvive() == SurvivalStrategies.COMBINATING) {
             deathrate = deathrate - (7 * Math.random());
         }
-        int allAnimals = ecosystem.getAmountFodderThieve() + ecosystem.getAmountPreditors() + ecosystem.getAmountSquirrels();
-        int predator = (allAnimals / 100) * ecosystem.getAmountPreditors();
+
+        int allPredators = Calculation.calculateAmoutOfPredators(squirrels, human);
+        int allFodderThieves = Calculation.calculateAmountOfFodderThieves(squirrels, human);
+        int allAnimals = allFodderThieves + allPredators + squirrels;
+        int predator = (allAnimals / 100) * allPredators;
         if (predator <= 25) {
             deathrate = deathrate - (2.5 * Math.random());
         } else if (predator <= 50) {
@@ -120,7 +127,7 @@ public class Squirrel implements Animal {
         } else {
             deathrate = 100;
         }
-        int fodderthives = (allAnimals / 100) * ecosystem.getAmountFodderThieve();
+        int fodderthives = (allAnimals / 100) * allFodderThieves;
         if (fodderthives <= 25) {
             deathrate = deathrate - (0.5 * Math.random());
         } else if (fodderthives <= 50) {
