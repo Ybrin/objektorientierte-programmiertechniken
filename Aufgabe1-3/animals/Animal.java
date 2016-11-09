@@ -10,4 +10,12 @@ public interface Animal {
     int getNeeded_food_for_childbearing();
 
     Strategy getStrategy();
+
+    void calculateYearPass(int collectedFood, boolean healthyFood);
+
+    boolean isDead();
+
+    boolean isProlific();
+
+    Sex getSex();
 }

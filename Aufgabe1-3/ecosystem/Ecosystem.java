@@ -20,5 +20,4 @@ public class Ecosystem {
     public void setAmountOfFindableFood(int amountOfFindableFood) {
         this.amountOfFindableFood = amountOfFindableFood;
     }
-
 }

@@ -1,21 +1,17 @@
 package calculation;
 
-import simulation.Group;
-import simulation.Population;
-import animals.Squirrel;
-import animals.Strategy;
-
 /**
  * Created by Sabrina on 12.10.2016.
  */
 public class Calculation {
 
     /**
-     * Try to calculate a randomised first calculation
+     * Calculate a randomised first calculation
      *
      * @return amount predators
      */
-    private static int calculateAmoutOfPredators(int amountSquirrels, boolean isInhabitedByHumans) {
+    @Deprecated
+    private static int calculateAmountOfPredators(int amountSquirrels, boolean isInhabitedByHumans) {
         int amountPredators;
         if (isInhabitedByHumans) {
             amountPredators = (int) (amountSquirrels * (Math.random() * 0.3));
@@ -27,23 +23,6 @@ public class Calculation {
     }
 
     /**
-     * Try to calculate a randomised first calculation
-     *
-     * @return amount fodder thievs
-     */
-    private static int calculateAmountOfFodderThieve(int amountSquirrels, boolean isInhabitedByHumans) {
-        int amountFodderThieve;
-        if (isInhabitedByHumans) {
-            amountFodderThieve = (int) (amountSquirrels * (Math.random() * 0.7));
-        } else {
-            amountFodderThieve = (int) (amountSquirrels * (Math.random()) * 0.5);
-        }
-
-        return amountFodderThieve;
-    }
-
-
-    /**
      * calculates the new amount of Trees
      * seperats between inhabited places (human) and not inhabited
      *
@@ -51,12 +30,8 @@ public class Calculation {
      * @return New amount of trees
      */
     public static int getNewAmountOfTrees(int amountOfTrees, int amountOfLeftFood, boolean isInhabitedByHumans) {
-        int amountOfnewTrees;
-        if (amountOfLeftFood != 0) {
-            amountOfnewTrees = amountOfLeftFood / 2;
-        } else {
-            amountOfnewTrees = 0;
-        }
+        int amountOfnewTrees = amountOfLeftFood / 1000;
+
         if (isInhabitedByHumans) {
             amountOfnewTrees = amountOfnewTrees - (int) (amountOfnewTrees * (Math.random() * (0.8)));
         } else {
@@ -71,11 +46,8 @@ public class Calculation {
      *
      * @return amount of findable food in the area
      */
-    public static int getNewAmoutOfFindableFood(int amountTrees, int amountOfnewTrees, int amountHumans, boolean isInhabitedByHumans) {
-        int amountOfFindableFood;
-        amountOfFindableFood = (amountTrees - amountOfnewTrees) * 10;
-
-        return amountOfFindableFood;
+    public static int getNewAmountOfFindableFood(int amountTrees, int amountOfnewTrees, int amountHumans) {
+        return amountTrees * 100 + amountOfnewTrees * 20 + amountHumans * 50;
     }
 
     /**
@@ -83,7 +55,7 @@ public class Calculation {
      *
      * @return if the food is healthy or not
      */
-    public boolean healthyFood(boolean isInhabitedByHumans) {
+    public static boolean healthyFood(boolean isInhabitedByHumans) {
         boolean health = true;
         if (isInhabitedByHumans) {
             if (Math.random() * 1 > 0.6) {

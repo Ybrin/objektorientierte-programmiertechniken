@@ -9,5 +9,4 @@ public enum SurvivalStrategies {
     COLLECTING,
     COMBINATING,
     TOBEFED;
-
 }

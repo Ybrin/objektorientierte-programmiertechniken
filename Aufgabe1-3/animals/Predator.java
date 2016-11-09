@@ -7,12 +7,28 @@ public class Predator implements Animal {
 
     private int needed_food_for_Survival;
     private int needed_food_for_childbearing;
-    Strategy strategy;
+    private Strategy strategy;
+    private boolean dead = false;
+    private boolean prolific = false;
+    private Sex sex;
 
-    public Predator(int needed_food_for_Survival, int needed_food_for_childbearing, Strategy strategy) {
+    public Predator(int needed_food_for_Survival, int needed_food_for_childbearing, Strategy strategy, Sex sex) {
         this.needed_food_for_Survival = needed_food_for_Survival;
         this.needed_food_for_childbearing = needed_food_for_childbearing;
         this.strategy = strategy;
+        this.sex = sex;
+    }
+
+    public void calculateYearPass(int collectedFood, boolean healthyFood) {
+        if (dead) return;
+
+        if (!(collectedFood > needed_food_for_Survival)) {
+            dead = true;
+            prolific = false;
+            return;
+        }
+
+        prolific = collectedFood > needed_food_for_childbearing;
     }
 
     public int getNeeded_food_for_Survival() {
@@ -25,5 +41,17 @@ public class Predator implements Animal {
 
     public Strategy getStrategy() {
         return strategy;
+    }
+
+    public boolean isDead() {
+        return dead;
+    }
+
+    public boolean isProlific() {
+        return prolific;
+    }
+
+    public Sex getSex() {
+        return sex;
     }
 }

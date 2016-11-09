@@ -14,30 +14,27 @@ import ecosystem.Ecosystem;
 
 public class Squirrel implements Animal {
 
-    Ecosystem ecosystem;
-
-    private boolean isdead;
-    private boolean sex;
+    private boolean dead;
+    private Sex sex;
     private int age;
     private boolean prolific;
-    private double health;
     private double deathrate;
     private int needed_food_for_Survival;
     private int needed_food_for_childbearing;
-    private Strategy strategyOfTheMother;
     private Strategy strategy;
 
+    private DeathReason deathReason;
 
-    public Squirrel(int needed_food_for_Survival, double health, int age, boolean sex, Strategy strategyOfTheMother) {
-        this.strategyOfTheMother = strategyOfTheMother;
-        this.needed_food_for_childbearing = getNeededFoodForChildbearing(this);
+    public Squirrel(int needed_food_for_Survival, int age, Sex sex, Strategy strategyOfTheMother) {
+        this.strategy = new Strategy(strategyOfTheMother.getStrategyToSurvive());
+
         this.needed_food_for_Survival = needed_food_for_Survival;
-        this.health = health;
+        this.needed_food_for_childbearing = getNeededFoodForChildbearing();
         this.age = age;
         this.sex = sex;
-        this.isdead = false;
+        this.dead = false;
 
-        /**
+        /*
          * calculates the deathrate of a squirrel according to their strategy to survive
          */
 
@@ -51,76 +48,138 @@ public class Squirrel implements Animal {
             deathrate = age * (7 * Math.random());
         }
 
-        /**
+        /*
          * calculates if a squirrel is prolific
          */
-        if (this.age >= 5) {
+        prolific = this.age < 7;
+    }
+
+    /**
+     * Calculates a year pass for this Squirrel
+     */
+    public void calculateYearPass(int collectedFood, boolean healthyFood) {
+        if (dead) return;
+
+        calculateStarved(collectedFood, healthyFood);
+
+        if (dead) return;
+
+        calculateSenility();
+
+        if (dead) return;
+
+        age++;
+    }
+
+    /**
+     * Set this squirrel to EATEN (by Predators) state
+     */
+    public void setEaten() {
+        dead = true;
+        deathReason = DeathReason.EATEN;
+        prolific = false;
+    }
+
+    /**
+     * Calculate whether the Squirrel starves or not
+     */
+    private void calculateStarved(int food, boolean healthy) {
+        if (food < needed_food_for_Survival) {
+            dead = true;
             prolific = false;
-        } else {
+            deathReason = DeathReason.STARVED;
+            return;
+        }
+
+        if (!healthy) {
+            if (Math.random() < 0.01) {
+                dead = true;
+                prolific = false;
+                deathReason = DeathReason.STARVED;
+                return;
+            }
+        }
+
+        prolific = food > needed_food_for_childbearing && this.age < 7;
+    }
+
+    /**
+     * Calculates whether the squirrel dies because of its age or not
+     */
+    private void calculateSenility() {
+        int rank = 0;
+        if (strategy.getLifegoals().contains("many & comfortable nests")) {
+            rank += 5;
+        }
+        if (strategy.getLifegoals().contains("prolific")) {
+            rank += 1;
+        }
+        if (strategy.getLifegoals().contains("delimitation & expansion of territory")) {
+            rank -= 2;
+        }
+        if (strategy.getLifegoals().contains("achievement & observance of dominance")) {
+            rank -= 3;
+        }
+
+        double factor = (rank == 0) ? 0 : 1 / rank;
+
+        int ageToDie = 9 + ((Math.random() < factor) ? (int) (3 * Math.random()) : (int) (5 * Math.random()));
+
+        if (age >= ageToDie) {
+            dead = true;
             prolific = true;
+            deathReason = DeathReason.SENILITY;
         }
     }
 
     /**
-     * calculates the strategy of the squirrel, under consideration of the mothers strategy
-     */
-    private void calculateStrategy() {
-        this.strategy.setStrategyToSurvive(strategyOfTheMother.getStrategyToSurvive());
-        this.strategy.getLifegoals();
-    }
-
-    /**
-     * calculates the amount of food a squirrel with the life goal prolific needs
+     * Calculates the amount of food the squirrel needs to be prolific.
      *
-     * @param squirrel
-     * @return int returns the needed food for squirrels with prolific as a life goal
+     * @return int Needed food for the squirrel to be prolific
      */
-    private int getNeededFoodForChildbearing(Squirrel squirrel) {
-        int food = squirrel.getNeeded_food_for_Survival();
+    private int getNeededFoodForChildbearing() {
+        int food = needed_food_for_Survival;
         if (strategy.getLifegoals().contains("prolific")) {
-            food += (int) (20 * Math.random());
+            food += (int) (5 * Math.random());
+        } else {
+            food += (int) (2 * Math.random());
         }
         return food;
     }
 
     /**
-     * calculates the health of the squirrel, according to inedibility of the food
-     */
-    private void calculateHealth() {
-        if (!ecosystem.healthyFood()) {
-            this.health = health - (10 * Math.random());
-        }
-        this.deathrate = deathrate - health;
-        isDead();
-    }
-
-
-    /**
      * calculates the death rate for the squirrel after a year,
      * according to strategy, predators and fodder thieves
+     *
+     * @param amountFodderThieve Amount of FodderThieves
+     * @param amountPredators    Amount of Predators
+     * @param amountSquirrels    Amount of Squirrels
      */
-    private void calculateDeathrate() {
+    @Deprecated
+    private void calculateDeathrate(int amountFodderThieve, int amountPredators, int amountSquirrels) {
         if (strategy.getStrategyToSurvive() == SurvivalStrategies.COLLECTING) {
 
         } else if (strategy.getStrategyToSurvive() == SurvivalStrategies.TOBEFED) {
-            deathrate = deathrate - (10 * Math.random());
+            deathrate = deathrate + (10 * Math.random());
         } else if (strategy.getStrategyToSurvive() == SurvivalStrategies.STEALING) {
-            deathrate = deathrate - (5 * Math.random());
+            deathrate = deathrate + (5 * Math.random());
         } else if (strategy.getStrategyToSurvive() == SurvivalStrategies.COMBINATING) {
-            deathrate = deathrate - (7 * Math.random());
+            deathrate = deathrate + (7 * Math.random());
         }
-        int allAnimals = ecosystem.getAmountFodderThieve() + ecosystem.getAmountPreditors() + ecosystem.getAmountSquirrels();
-        int predator = (allAnimals / 100) * ecosystem.getAmountPreditors();
+        int allAnimals = amountFodderThieve + amountPredators + amountSquirrels;
+        int predator = (allAnimals / 100) * amountPredators;
         if (predator <= 25) {
-            deathrate = deathrate - (2.5 * Math.random());
+            deathrate = deathrate + (2.5 * Math.random());
         } else if (predator <= 50) {
-            deathrate = deathrate - (5 * Math.random());
+            deathrate = deathrate + (5 * Math.random());
         } else if (predator <= 75) {
-            deathrate = deathrate - (7.5 * Math.random());
+            deathReason = DeathReason.EATEN;
+            deathrate = deathrate + (7.5 * Math.random());
         } else {
+            deathReason = DeathReason.EATEN;
             deathrate = 100;
         }
-        int fodderthives = (allAnimals / 100) * ecosystem.getAmountFodderThieve();
+        int fodderthives = (allAnimals / 100) * amountFodderThieve;
         if (fodderthives <= 25) {
             deathrate = deathrate - (0.5 * Math.random());
         } else if (fodderthives <= 50) {
@@ -130,17 +189,23 @@ public class Squirrel implements Animal {
         } else {
             deathrate = deathrate - (7.5 * Math.random());
         }
-        isDead();
+        calculateDead();
     }
 
-    private void isDead() {
-        if (deathrate == 100) {
-            isdead = true;
+    @Deprecated
+    private void calculateDead() {
+        if (deathrate >= 100) {
+            dead = true;
+            prolific = false;
         }
     }
 
-    public double getHealth() {
-        return health;
+    public boolean isDead() {
+        return dead;
+    }
+
+    public DeathReason getDeathReason() {
+        return deathReason;
     }
 
     public double getDeathrate() {
@@ -151,11 +216,7 @@ public class Squirrel implements Animal {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public boolean isSex() {
+    public Sex getSex() {
         return sex;
     }
 
