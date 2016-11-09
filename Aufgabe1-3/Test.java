@@ -95,6 +95,7 @@ public class Test /*extends JFrame*/ {
             System.out.println("Starved squirrels: " + simulation.getDeadSquirrelsByStarved());
             System.out.println("Eaten squirrels: " + simulation.getDeadSquirrelsByEaten());
             System.out.println("Dead by senility squirrels: " + simulation.getDeadSquirrelsBySenility());
+            System.out.println("Newly born squirrels: " + simulation.getAmountNewlyBornSquirrels());
         }
     }
 }

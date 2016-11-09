@@ -27,6 +27,8 @@ public class Simulation {
 
     private List<Squirrel> deadSquirrels = new ArrayList<Squirrel>();
 
+    private List<Squirrel> bornSquirrels = new ArrayList<Squirrel>();
+
     /**
      * Initializes a new Simulation which calculates new years and the resulting amount of squirrels
      *
@@ -48,6 +50,9 @@ public class Simulation {
      * Calculates a new year pass for this Simulation system
      */
     public void calculateNewYear() {
+        // Reset new born squirrels
+        bornSquirrels.clear();
+
         calculateAnimalsYearPass();
         calculateSquirrelChildBearing(squirrels);
         calculatePredatorChildBearing(predators);
@@ -188,6 +193,24 @@ public class Simulation {
                 animals.add(squirrelOne);
                 animals.add(squirrelTwo);
                 animals.add(squirrelThree);
+
+                bornSquirrels.add(squirrelOne);
+                bornSquirrels.add(squirrelTwo);
+                bornSquirrels.add(squirrelThree);
+
+                if (aFemale.getStrategy().getLifegoals().contains("prolific")) {
+                    Squirrel squirrelFour = new Squirrel(aFemale.getNeeded_food_for_Survival(), 0, Sex.random(), aFemale.getStrategy());
+                    Squirrel squirrelFive = new Squirrel(aFemale.getNeeded_food_for_Survival(), 0, Sex.random(), aFemale.getStrategy());
+                    Squirrel squirrelSix = new Squirrel(aFemale.getNeeded_food_for_Survival(), 0, Sex.random(), aFemale.getStrategy());
+
+                    animals.add(squirrelFour);
+                    animals.add(squirrelFive);
+                    animals.add(squirrelSix);
+
+                    bornSquirrels.add(squirrelFour);
+                    bornSquirrels.add(squirrelFive);
+                    bornSquirrels.add(squirrelSix);
+                }
             }
         }
     }
@@ -271,6 +294,10 @@ public class Simulation {
 
     public int getAmountTrees() {
         return amountTrees;
+    }
+
+    public int getAmountNewlyBornSquirrels() {
+        return bornSquirrels.size();
     }
 
     public int getDeadSquirrelsBySenility() {
