@@ -23,6 +23,26 @@ public class Calculation {
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Try to calculate a randomised first calculation
+     *
+     * @return amount fodder thievs
+     */
+    public static int calculateAmountOfFodderThieves(int amountSquirrels, boolean isInhabitedByHumans) {
+        int amountFodderThieve;
+        if (isInhabitedByHumans) {
+            amountFodderThieve = (int) (amountSquirrels * (Math.random() * 0.7));
+        } else {
+            amountFodderThieve = (int) (amountSquirrels * (Math.random()) * 0.5);
+        }
+
+        return amountFodderThieve;
+    }
+
+
+    /**
+>>>>>>> origin/master
      * calculates the new amount of Trees
      * seperats between inhabited places (human) and not inhabited
      *

@@ -254,6 +254,7 @@ public class Simulation {
         return new Strategy(survivalStrategies);
     }
 
+
     // Getters
 
     public int getAmountHumans() {

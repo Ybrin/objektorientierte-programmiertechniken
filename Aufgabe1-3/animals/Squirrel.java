@@ -1,6 +1,7 @@
 package animals;
 
 import animals.Animal;
+import calculation.Calculation;
 import ecosystem.Ecosystem;
 
 /**
