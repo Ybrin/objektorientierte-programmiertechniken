@@ -84,7 +84,7 @@ public class Test /*extends JFrame*/ {
     public static void main(String[] args) {
         Simulation simulation = new Simulation(10000, 50, 5000, 100000);
 
-        for (int i = 0; i < 150; i++) {
+        for (int i = 0; i < 10; i++) {
             simulation.calculateNewYear();
 
             System.out.println("******* NEW YEAR: YEAR " + i + " *******");

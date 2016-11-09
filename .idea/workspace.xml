@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="034e73b8-0f49-4e4e-a5a9-3a98b0160215" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe1-3/animals/Squirrel.java" afterPath="$PROJECT_DIR$/Aufgabe1-3/animals/Squirrel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe1-3/calculation/Calculation.java" afterPath="$PROJECT_DIR$/Aufgabe1-3/calculation/Calculation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe1-3/ecosystem/Ecosystem.java" afterPath="$PROJECT_DIR$/Aufgabe1-3/ecosystem/Ecosystem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe1-3/simulation/Simulation.java" afterPath="$PROJECT_DIR$/Aufgabe1-3/simulation/Simulation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe1-3/Test.java" afterPath="$PROJECT_DIR$/Aufgabe1-3/Test.java" />
     </list>
     <ignored path="oopH32.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -106,8 +102,8 @@
       <file leaf-file-name="Test.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Aufgabe1-3/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="86" column="31" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
+            <state relative-caret-position="215">
+              <caret line="86" column="30" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -180,10 +176,10 @@
         <option value="$PROJECT_DIR$/Aufgabe1-3/ecosystem/Ecosystem.java" />
         <option value="$PROJECT_DIR$/Aufgabe1-3/animals/Sex.java" />
         <option value="$PROJECT_DIR$/Aufgabe1-3/animals/Strategy.java" />
-        <option value="$PROJECT_DIR$/Aufgabe1-3/Test.java" />
         <option value="$PROJECT_DIR$/Aufgabe1-3/animals/Squirrel.java" />
         <option value="$PROJECT_DIR$/Aufgabe1-3/simulation/Simulation.java" />
         <option value="$PROJECT_DIR$/Aufgabe1-3/calculation/Calculation.java" />
+        <option value="$PROJECT_DIR$/Aufgabe1-3/Test.java" />
       </list>
     </option>
   </component>
@@ -804,7 +800,7 @@
       <workItem from="1477910018375" duration="1269000" />
       <workItem from="1478261568705" duration="556000" />
       <workItem from="1478524332597" duration="2946000" />
-      <workItem from="1478630372290" duration="15577000" />
+      <workItem from="1478630372290" duration="15596000" />
     </task>
     <task id="LOCAL-00001" summary="implemented&#10;Ecosystem">
       <created>1477490680795</created>
@@ -824,7 +820,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22824000" />
+    <option name="totallyTimeSpent" value="22843000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="725" extended-state="6" />
@@ -1367,8 +1363,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Aufgabe1-3/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="86" column="31" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
+        <state relative-caret-position="215">
+          <caret line="86" column="30" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
           <folding />
         </state>
       </provider>
