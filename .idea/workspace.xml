@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="034e73b8-0f49-4e4e-a5a9-3a98b0160215" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/oopH32/Test.class" afterPath="$PROJECT_DIR$/out/production/oopH32/Test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/oopH32/simulation/Simulation.class" afterPath="$PROJECT_DIR$/out/production/oopH32/simulation/Simulation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe1-3/Test.java" afterPath="$PROJECT_DIR$/Aufgabe1-3/Test.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe1-3/simulation/Simulation.java" afterPath="$PROJECT_DIR$/Aufgabe1-3/simulation/Simulation.java" />
     </list>
@@ -62,8 +59,11 @@
             <state relative-caret-position="180">
               <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
-                <element signature="e#458#459#0" expanded="true" />
-                <element signature="e#522#523#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#238#239#0" expanded="false" />
+                <element signature="e#302#303#0" expanded="false" />
+                <element signature="e#346#347#0" expanded="false" />
+                <element signature="e#389#390#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -105,8 +105,8 @@
       <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Aufgabe1-3/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="86" column="30" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
+            <state relative-caret-position="405">
+              <caret line="33" column="104" selection-start-line="33" selection-start-column="104" selection-end-line="33" selection-end-column="104" />
               <folding />
             </state>
           </provider>
@@ -115,13 +115,13 @@
       <file leaf-file-name="Simulation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Aufgabe1-3/simulation/Simulation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="299" column="36" selection-start-line="299" selection-start-column="36" selection-end-line="299" selection-end-column="36" />
+            <state relative-caret-position="229">
+              <caret line="52" column="86" selection-start-line="52" selection-start-column="86" selection-end-line="52" selection-end-column="86" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#710#720#0" expanded="true" />
-                <element signature="e#10975#10976#0" expanded="true" />
-                <element signature="e#11018#11019#0" expanded="true" />
+                <element signature="e#11029#11030#0" expanded="true" />
+                <element signature="e#11072#11073#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -177,8 +177,8 @@
         <option value="$PROJECT_DIR$/Aufgabe1-3/animals/Strategy.java" />
         <option value="$PROJECT_DIR$/Aufgabe1-3/animals/Squirrel.java" />
         <option value="$PROJECT_DIR$/Aufgabe1-3/calculation/Calculation.java" />
-        <option value="$PROJECT_DIR$/Aufgabe1-3/simulation/Simulation.java" />
         <option value="$PROJECT_DIR$/Aufgabe1-3/Test.java" />
+        <option value="$PROJECT_DIR$/Aufgabe1-3/simulation/Simulation.java" />
       </list>
     </option>
   </component>
@@ -800,7 +800,7 @@
       <workItem from="1478261568705" duration="556000" />
       <workItem from="1478524332597" duration="2946000" />
       <workItem from="1478630372290" duration="15613000" />
-      <workItem from="1478679053864" duration="1287000" />
+      <workItem from="1478679053864" duration="1664000" />
     </task>
     <task id="LOCAL-00001" summary="implemented&#10;Ecosystem">
       <created>1477490680795</created>
@@ -820,7 +820,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24147000" />
+    <option name="totallyTimeSpent" value="24524000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="725" extended-state="0" />
@@ -905,8 +905,11 @@
         <state relative-caret-position="225">
           <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding>
-            <element signature="e#458#459#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#238#239#0" expanded="false" />
+            <element signature="e#302#303#0" expanded="false" />
+            <element signature="e#346#347#0" expanded="false" />
+            <element signature="e#389#390#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -919,8 +922,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#710#720#0" expanded="true" />
-            <element signature="e#10975#10976#0" expanded="true" />
-            <element signature="e#11018#11019#0" expanded="true" />
+            <element signature="e#11029#11030#0" expanded="true" />
+            <element signature="e#11072#11073#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1251,6 +1254,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1294,29 +1298,32 @@
         <state relative-caret-position="180">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <element signature="e#458#459#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#238#239#0" expanded="false" />
+            <element signature="e#302#303#0" expanded="false" />
+            <element signature="e#346#347#0" expanded="false" />
+            <element signature="e#389#390#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Aufgabe1-3/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="86" column="30" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
+        <state relative-caret-position="405">
+          <caret line="33" column="104" selection-start-line="33" selection-start-column="104" selection-end-line="33" selection-end-column="104" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Aufgabe1-3/simulation/Simulation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="299" column="36" selection-start-line="299" selection-start-column="36" selection-end-line="299" selection-end-column="36" />
+        <state relative-caret-position="229">
+          <caret line="52" column="86" selection-start-line="52" selection-start-column="86" selection-end-line="52" selection-end-column="86" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#710#720#0" expanded="true" />
-            <element signature="e#10975#10976#0" expanded="true" />
-            <element signature="e#11018#11019#0" expanded="true" />
+            <element signature="e#11029#11030#0" expanded="true" />
+            <element signature="e#11072#11073#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -50,8 +50,8 @@ public class Simulation {
      * Calculates a new year pass for this Simulation system
      */
     public void calculateNewYear() {
-        // Reset new born squirrels
-        bornSquirrels.clear();
+        // Reset new born squirrels TODO Should not be reset, to have the total amount
+        // bornSquirrels.clear();
 
         calculateAnimalsYearPass();
         calculateSquirrelChildBearing(squirrels);

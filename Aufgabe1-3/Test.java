@@ -23,6 +23,19 @@ import simulation.Simulation;
 public class Test /*extends JFrame*/ {
 
     /*
+    * ******* FINALE ABGABE *******
+    * Sabrina:
+    *  -) Animal, Squirrel, Predator und alles zugehörige
+    * Aniela:
+    *  -) Calculation Methoden, Grobstruktur von Ecosystem, grundlegende Methoden von Simulation
+    * Koray:
+    *  -) Sex enum und Animal Interface implementiert, Calculation methoden, Simulation Klasse aufgebaut, Squirrel überarbeitet
+    *
+    * ---> Testklasse implementiert Simulation und lässt sie über einen Zeitraum von 10 Jahren laufen...
+    *
+     */
+
+    /*
     * ABGABE 31.10.2016
     *
     * -) Code ist noch nicht ausführbar, Testklassen fehlen.
