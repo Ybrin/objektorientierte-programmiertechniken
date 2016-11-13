@@ -23,8 +23,6 @@ public class Calculation {
     }
 
     /**
-<<<<<<< HEAD
-=======
      * Try to calculate a randomised first calculation
      *
      * @return amount fodder thievs
@@ -42,7 +40,6 @@ public class Calculation {
 
 
     /**
->>>>>>> origin/master
      * calculates the new amount of Trees
      * seperats between inhabited places (human) and not inhabited
      *
