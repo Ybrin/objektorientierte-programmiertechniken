@@ -12,6 +12,7 @@ public class Predator implements Animal {
     private boolean prolific = false;
     private Sex sex;
 
+
     public Predator(int needed_food_for_Survival, int needed_food_for_childbearing, Strategy strategy, Sex sex) {
         this.needed_food_for_Survival = needed_food_for_Survival;
         this.needed_food_for_childbearing = needed_food_for_childbearing;
@@ -19,6 +20,12 @@ public class Predator implements Animal {
         this.sex = sex;
     }
 
+    /**
+     * calculates if the predator survives a year
+     *
+     * @param collectedFood how much food the predator has collected in a year
+     * @param healthyFood if the food was healthy
+     */
     public void calculateYearPass(int collectedFood, boolean healthyFood) {
         if (dead) return;
 

@@ -8,6 +8,7 @@ public enum Sex {
     MALE,
     FEMALE;
 
+
     public static Sex random() {
         return (Math.random() > 0.5) ? Sex.MALE : Sex.MALE;
     }

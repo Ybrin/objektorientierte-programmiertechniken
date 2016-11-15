@@ -8,11 +8,6 @@ import ecosystem.Ecosystem;
  * Created by Sabrina on 12.10.2016.
  */
 
-/**
- * will be added:
- * *intelligence of the squirrel (remembers where it's food is, confuses potential fodder thieves,..)
- */
-
 public class Squirrel implements Animal {
 
     private boolean dead;
@@ -57,6 +52,9 @@ public class Squirrel implements Animal {
 
     /**
      * Calculates a year pass for this Squirrel
+     *
+     * @param collectedFood amount of collected food in a year
+     * @param healthyFood if the food was healthy
      */
     public void calculateYearPass(int collectedFood, boolean healthyFood) {
         if (dead) return;
@@ -82,7 +80,10 @@ public class Squirrel implements Animal {
     }
 
     /**
-     * Calculate whether the Squirrel starves or not
+     * calculates if the squirrel starved
+     *
+     * @param food amount of food it collected
+     * @param healthy if th collected food was healthy
      */
     private void calculateStarved(int food, boolean healthy) {
         if (food < needed_food_for_Survival) {
@@ -193,6 +194,9 @@ public class Squirrel implements Animal {
         calculateDead();
     }
 
+    /**
+     * calculates if a squirrel is dead
+     */
     @Deprecated
     private void calculateDead() {
         if (deathrate >= 100) {
