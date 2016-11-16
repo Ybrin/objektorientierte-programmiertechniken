@@ -21,7 +21,8 @@ public class Strategy {
     }
 
     /**
-     * chooses the number of and the life goals of a squirrel
+     * chooses the number of and the life goals of a squirrel.
+     * Sets the lifegoals to the randomly chosen elements.
      */
     private void setLifegoals() {
         // Maximum number of life goals: 3

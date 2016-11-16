@@ -30,10 +30,6 @@ public class Squirrel implements Animal {
         this.sex = sex;
         this.dead = false;
 
-        /*
-         * calculates the deathrate of a squirrel according to their strategy to survive
-         */
-
         if (strategyOfTheMother.getStrategyToSurvive() == SurvivalStrategies.COLLECTING) {
             deathrate = 0;
         } else if (strategyOfTheMother.getStrategyToSurvive() == SurvivalStrategies.TOBEFED) {
@@ -195,7 +191,7 @@ public class Squirrel implements Animal {
     }
 
     /**
-     * calculates if a squirrel is dead
+     * calculates if a squirrel is dead. Use setEaten, calculateStarved or calculateSenility instead.
      */
     @Deprecated
     private void calculateDead() {

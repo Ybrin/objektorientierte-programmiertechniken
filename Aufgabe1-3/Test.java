@@ -78,31 +78,19 @@ public class Test /*extends JFrame*/ {
     /**Aufgabe 9.11
      * Kommentare in:
      * Sabrina:
-     * Preditor, Sex, Squerrle
+     * Preditor, Sex, Squirrel
      * Koray:
      * Test, Simulation
      * Aniela:
      * Callculation, Ecosystem
      */
-    // JTable table;
 
-    /*
-    public Test() {
-        setLayout(new FlowLayout());
-
-        String[] columns = {"Year", "Collected amout of food/S", "Available food/S",
-                "Recoverd own food", "Found foreign food", "Death rate/S", "Groupsize"};
-
-        Object[][] data = {};
-
-        table = new JTable(new DefaultTableModel(data, columns));
-        table.setPreferredScrollableViewportSize(new Dimension(600, 500));
-        table.setFillsViewportHeight(true);
-
-        JScrollPane scrollpane = new JScrollPane(table);
-        add(scrollpane);
-    }*/
-
+    /**
+     * Starts a new Simulation with 10000 initial Squirrels and 50 predators. Calculates 10 passed years and
+     * prints all available values from the Simulation class for every year.
+     *
+     * @param args The command line arguments (expected to be empty)
+     */
     public static void main(String[] args) {
         Simulation simulation = new Simulation(10000, 50, 5000, 100000);
 
