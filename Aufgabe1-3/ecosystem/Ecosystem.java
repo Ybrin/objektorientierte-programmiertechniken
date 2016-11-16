@@ -13,7 +13,6 @@ public class Ecosystem {
     /**
      * Konstruktor of Economy  consistinc of findablefood
      * @param amountOfFindableFood
-     * @autor Aniela
      */
     public Ecosystem(int amountOfFindableFood) {
         this.amountOfFindableFood = amountOfFindableFood;
@@ -23,7 +22,6 @@ public class Ecosystem {
      * getter amount of findable food
      *
      * @return amount of findable food in economie
-     * @autor Aniela
      */
     public int getAmountOfFindableFood() {
         return amountOfFindableFood;
@@ -33,7 +31,6 @@ public class Ecosystem {
      * setter amount of findable food
      *
      * @param amountOfFindableFood
-     * @autor Aniela
      */
     public void setAmountOfFindableFood(int amountOfFindableFood) {
         this.amountOfFindableFood = amountOfFindableFood;

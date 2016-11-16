@@ -6,8 +6,12 @@ package calculation;
 public class Calculation {
 
     /**
-     * Calculate a randomised first calculation
+     * Calculate a randomised first calculation of Preditors
+     * if it is inhabited
+     *the amount of Preditors normaly is (but does not have to be ) les than in unhabitat ariers
      *
+     *@param amountSquirrels current amount of squirrels
+     * @param isInhabitedByHumans if true it is inhabited by humans
      * @return amount predators
      */
     @Deprecated
@@ -23,8 +27,12 @@ public class Calculation {
     }
 
     /**
-     * Try to calculate a randomised first calculation
+     * Try to calculate a randomised first calculation of fodder thieves
+     *as in calculateAmountOfPredators the amount of fodder thiefs depends on the inhabitents of humans
+     * in this case there thend to be more whene the arier is inhabited and les when not
      *
+     * @param amountSquirrels amount of current squirrels
+     * @param isInhabitedByHumans if humans live in an certan arrier
      * @return amount fodder thievs
      */
     public static int calculateAmountOfFodderThieves(int amountSquirrels, boolean isInhabitedByHumans) {
@@ -40,10 +48,14 @@ public class Calculation {
 
 
     /**
-     * calculates the new amount of Trees
+     * calculates the amount of new Trees, use radomisation
      * seperats between inhabited places (human) and not inhabited
+     * only one out of 1000 grows a tree
      *
+     * @param amountOfTrees ERROR: not needed, calculation it is needed, is to find in Simulation
+     * @param isInhabitedByHumans inhabited of humans or not
      * @param amountOfLeftFood food left
+     *
      * @return New amount of trees
      */
     public static int getNewAmountOfTrees(int amountOfTrees, int amountOfLeftFood, boolean isInhabitedByHumans) {
@@ -61,6 +73,10 @@ public class Calculation {
     /**
      * calculates the findable food resources (including findable food from human)
      *
+     *
+     * @param amountHumans amount of humans living in the arier
+     * @param amountOfnewTrees amount of new trees (trees that started growing this year)
+     * @param amountTrees amount of already existing trees
      * @return amount of findable food in the area
      */
     public static int getNewAmountOfFindableFood(int amountTrees, int amountOfnewTrees, int amountHumans) {
@@ -70,6 +86,9 @@ public class Calculation {
     /**
      * Probability depends on inhabited by humans or not
      *
+     * if an arier is inhabited by humans, the food is more likly to be unhalthy
+     *
+     * @param isInhabitedByHumans if humans life in a cerrten arier
      * @return if the food is healthy or not
      */
     public static boolean healthyFood(boolean isInhabitedByHumans) {
@@ -78,7 +97,7 @@ public class Calculation {
             if (Math.random() * 1 > 0.6) {
                 health = false;
             }
-        } else {
+       } else {
             if ((Math.random() * 1) > 0.8) {
                 health = false;
             }
