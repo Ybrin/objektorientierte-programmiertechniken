@@ -75,6 +75,15 @@ public class Test /*extends JFrame*/ {
     *  ******* AUFGABE 2 *******
      */
 
+    /**Aufgabe 9.11
+     * Kommentare in:
+     * Sabrina:
+     * Preditor, Sex, Squerrle
+     * Koray:
+     * Test, Simulation
+     * Aniela:
+     * Callculation, Ecosystem
+     */
     // JTable table;
 
     /*
