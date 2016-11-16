@@ -15,7 +15,6 @@ import java.util.function.Predicate;
  */
 public class Simulation {
 
-    //used to find amount of available food
     private int amountHumans;
 
     private int amountTrees;
@@ -30,7 +29,10 @@ public class Simulation {
     private List<Squirrel> bornSquirrels = new ArrayList<Squirrel>();
 
     /**
-     * Initializes a new Simulation which calculates new years and the resulting amount of squirrels
+     * Initializes a new instance of Simulation which can calculate new passed years and the resulting amount of squirrels
+     * Initially creates the amount of squirrels <code>getSquirrels()</code> and predators <code>getPredators</code>
+     * <p>
+     * Initializes the 'ecosystem' instance to be used in this context
      *
      * @param initialSquirrels The initial amount of squirrels
      * @param initialPredators The initial amount of predators
@@ -48,11 +50,14 @@ public class Simulation {
 
     /**
      * Calculates a new year pass for this Simulation system
+     * <p>
+     * amountTrees will be updated with the new amount of trees
+     * <p>
+     * squirrels, predators, deadSquirrels, bornSquirrels will be updated with the corresponding new values.
+     * <p>
+     * amountOfFindableFood in the connected instance of ecosystem will be updated to the new value.
      */
     public void calculateNewYear() {
-        // Reset new born squirrels TODO Should not be reset, to have the total amount
-        // bornSquirrels.clear();
-
         calculateAnimalsYearPass();
         calculateSquirrelChildBearing(squirrels);
         calculatePredatorChildBearing(predators);
@@ -60,16 +65,20 @@ public class Simulation {
         int newTrees = Calculation.getNewAmountOfTrees(amountTrees, (int) (ecosystem.getAmountOfFindableFood() * 0.8), false);
         newTrees += Calculation.getNewAmountOfTrees(amountTrees, (int) (ecosystem.getAmountOfFindableFood() * 0.2), true);
 
-        // Some trees die
         amountTrees = amountTrees - (int) (amountTrees * ((Math.random() > 0.5) ? 0.1 : 0.2));
 
-        // Calculate new food for next year
         ecosystem.setAmountOfFindableFood(Calculation.getNewAmountOfFindableFood(amountTrees, newTrees, amountHumans));
 
-        // Add new trees
         amountTrees += newTrees;
     }
 
+    /**
+     * Initially creates the given amount of squirrels and updates <code>squirrels</code> and <code>predators</code>.
+     * <p>
+     * Randomly generates a Strategy for each animal.
+     * @param amountSquirrels The amount of squirrels which should be created
+     * @param amountPredators The amount of predators which should be created
+     */
     private void initialAnimalCreation(int amountSquirrels, int amountPredators) {
         for (int i = 0; i < amountSquirrels; i++) {
             Squirrel squirrel = new Squirrel((int) (60 * Math.random()), (int) (2 * Math.random()), (Math.random() > 0.5) ? Sex.MALE : Sex.FEMALE, randomStrategy());
@@ -86,10 +95,13 @@ public class Simulation {
     }
 
     /**
-     * Calculates a year pass for all animals
+     * Calculates a year pass for all animals. Updates all corresponding values to the new ones.
+     * <p>
+     * Dead squirrels will be added to the deadSquirrels list.
+     * amountOfFindableFood for the instance of ecosystem will be updated.
+     * Squirrels will be updated with the new value. Predators will be updated to the new value.
      */
     private void calculateAnimalsYearPass() {
-        // Squirrels
         for (Squirrel squirrel : squirrels) {
             double rank = 1;
             if (squirrel.getStrategy().getLifegoals().contains("many & comfortable nests")) {
@@ -110,7 +122,6 @@ public class Simulation {
 
             ecosystem.setAmountOfFindableFood(ecosystem.getAmountOfFindableFood() - food);
 
-            // 20% probability for a region to be inhabited by human
             squirrel.calculateYearPass(food, Calculation.healthyFood((Math.random() > 0.8)));
         }
 
@@ -122,7 +133,6 @@ public class Simulation {
             }
         }
 
-        // Predators
         for (Predator predator : predators) {
             double rank = 1;
             if (predator.getStrategy().getLifegoals().contains("many & comfortable nests")) {
@@ -148,7 +158,6 @@ public class Simulation {
                 squirrels.remove(e);
             }
 
-            // 20% probability for a region to be inhabited by human
             predator.calculateYearPass(food, Calculation.healthyFood((Math.random() > 0.8)));
         }
 
@@ -161,7 +170,9 @@ public class Simulation {
     }
 
     /**
-     * Calculates and creates new elements of squirrels born
+     * Calculates and creates new elements of squirrels born.
+     *
+     * Born squirrels will be added to the bornSquirrels list.
      *
      * @param animals The list of squirrels
      */
@@ -185,7 +196,6 @@ public class Simulation {
             }
 
             for (Squirrel aFemale : female) {
-                // TODO This is not beautiful, this should be changed to be more dynamic
                 Squirrel squirrelOne = new Squirrel(aFemale.getNeeded_food_for_Survival(), 0, Sex.random(), aFemale.getStrategy());
                 Squirrel squirrelTwo = new Squirrel(aFemale.getNeeded_food_for_Survival(), 0, Sex.random(), aFemale.getStrategy());
                 Squirrel squirrelThree = new Squirrel(aFemale.getNeeded_food_for_Survival(), 0, Sex.random(), aFemale.getStrategy());
@@ -216,9 +226,9 @@ public class Simulation {
     }
 
     /**
-     * Calculates and creates new elements of squirrels born
+     * Calculates and creates new elements of predators born
      *
-     * @param animals The list of squirrels
+     * @param animals The list of predators
      */
     private void calculatePredatorChildBearing(List<Predator> animals) {
         List<Predator> male = new ArrayList<Predator>();
@@ -240,7 +250,6 @@ public class Simulation {
             }
 
             for (Predator aFemale : female) {
-                // TODO This is not beautiful, this should be changed to be more dynamic
                 Predator predatorOne = new Predator(aFemale.getNeeded_food_for_Survival(), aFemale.getNeeded_food_for_childbearing(), aFemale.getStrategy(), Sex.random());
                 Predator predatorTwo = new Predator(aFemale.getNeeded_food_for_Survival(), aFemale.getNeeded_food_for_childbearing(), aFemale.getStrategy(), Sex.random());
 
@@ -277,29 +286,50 @@ public class Simulation {
         return new Strategy(survivalStrategies);
     }
 
-
-    // Getters
-
+    /**
+     * Returns the amount of humans
+     * @return The amount of humans
+     */
     public int getAmountHumans() {
         return amountHumans;
     }
 
+    /**
+     * Returns the amount of squirrels
+     * @return The amount of squirrels
+     */
     public int getAmountSquirrels() {
         return squirrels.size();
     }
 
+    /**
+     * Returns the amount of predators
+     * @return The amount of predators
+     */
     public int getAmountPredators() {
         return predators.size();
     }
 
+    /**
+     * Returns the amount of trees
+     * @return The amount of trees
+     */
     public int getAmountTrees() {
         return amountTrees;
     }
 
+    /**
+     * Returns the amount of born squirrels
+     * @return The amount of born squirrels
+     */
     public int getAmountNewlyBornSquirrels() {
         return bornSquirrels.size();
     }
 
+    /**
+     * Returns the amount of dead squirrels which died by senility
+     * @return The amount of dead squirrels which died by senility
+     */
     public int getDeadSquirrelsBySenility() {
         int dead = 0;
         for (Squirrel s : deadSquirrels) {
@@ -308,6 +338,10 @@ public class Simulation {
         return dead;
     }
 
+    /**
+     * Returns the amount of dead squirrels which died by being eaten
+     * @return The amount of dead squirrels which died by being eaten
+     */
     public int getDeadSquirrelsByEaten() {
         int dead = 0;
         for (Squirrel s : deadSquirrels) {
@@ -316,6 +350,10 @@ public class Simulation {
         return dead;
     }
 
+    /**
+     * Returns the amount of dead squirrels which died by starving
+     * @return The amount of dead squirrels which died by starving
+     */
     public int getDeadSquirrelsByStarved() {
         int dead = 0;
         for (Squirrel s : deadSquirrels) {
