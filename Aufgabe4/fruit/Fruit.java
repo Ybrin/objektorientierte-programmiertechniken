@@ -1,4 +1,4 @@
-package fruit;
+package Fruit;
 
 
 import SquirrelFood.SquirrelFood;

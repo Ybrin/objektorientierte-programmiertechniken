@@ -1,6 +1,4 @@
-package fruit;
-
-import fruit.Fruit;
+package Fruit;
 
 /**
  * Created by Aniela on 16.11.2016.

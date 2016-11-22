@@ -1,4 +1,4 @@
-package fruit;
+package Fruit;
 
 /**
  * Created by Sabrina on 22.11.2016.
