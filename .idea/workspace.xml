@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="034e73b8-0f49-4e4e-a5a9-3a98b0160215" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe4/Fruit/DryFruit.java" afterPath="$PROJECT_DIR$/Aufgabe4/Fruit/DryFruit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe4/TestA4.java" afterPath="$PROJECT_DIR$/Aufgabe4/TestA4.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe4/fruit/DriedMushroom.java" afterPath="$PROJECT_DIR$/Aufgabe4/fruit/DriedMushroom.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe4/fruit/FreshFruit.java" afterPath="$PROJECT_DIR$/Aufgabe4/fruit/FreshFruit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe4/fruit/Fruit.java" afterPath="$PROJECT_DIR$/Aufgabe4/fruit/Fruit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe4/fruit/Mushroom.java" afterPath="$PROJECT_DIR$/Aufgabe4/fruit/Mushroom.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe4/SquirrelFood/DurableSquirrelFood.java" afterPath="$PROJECT_DIR$/Aufgabe4/SquirrelFood/DurableSquirrelFood.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe4/SquirrelFood/PerishableSquirrelFood.java" afterPath="$PROJECT_DIR$/Aufgabe4/SquirrelFood/PerishableSquirrelFood.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe4/SquirrelFood/SquirrelFood.java" afterPath="$PROJECT_DIR$/Aufgabe4/SquirrelFood/SquirrelFood.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe4/SquirrelFood/VegetarienSquirrelFood.java" afterPath="$PROJECT_DIR$/Aufgabe4/SquirrelFood/VegetarienSquirrelFood.java" />
     </list>
     <ignored path="oopH32.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,53 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DriedMushroom.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Aufgabe4/Fruit/DriedMushroom.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DryFruit.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Aufgabe4/Fruit/DryFruit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="9" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestA4.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Aufgabe4/TestA4.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.82245433">
-              <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DurableSquirrelFood.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Aufgabe4/SquirrelFood/DurableSquirrelFood.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PerishableSquirrelFood.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Aufgabe4/SquirrelFood/PerishableSquirrelFood.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -88,8 +44,35 @@
         <entry file="file://$PROJECT_DIR$/Aufgabe4/SquirrelFood/VegetarienSquirrelFood.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+              <folding>
+                <marker date="1479849584787" expanded="true" signature="215:378" placeholder="/**...*/" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DurableSquirrelFood.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Aufgabe4/SquirrelFood/DurableSquirrelFood.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.40753424">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SquirrelFood.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Aufgabe4/SquirrelFood/SquirrelFood.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+              <folding>
+                <marker date="1479849584808" expanded="true" signature="103:199" placeholder="/**...*/" />
+                <marker date="1479849584808" expanded="true" signature="230:314" placeholder="/**...*/" />
+                <marker date="1479849584808" expanded="true" signature="339:421" placeholder="/**...*/" />
+                <marker date="1479849584808" expanded="true" signature="445:535" placeholder="/**...*/" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,13 +129,13 @@
         <option value="$PROJECT_DIR$/Aufgabe4/Fruit.java" />
         <option value="$PROJECT_DIR$/Aufgabe4/Nut.java" />
         <option value="$PROJECT_DIR$/Aufgabe4/OpenSeam.java" />
-        <option value="$PROJECT_DIR$/Aufgabe4/SquirrelFood/DurableSquirrelFood.java" />
         <option value="$PROJECT_DIR$/Aufgabe4/SquirrelFood/test.java" />
-        <option value="$PROJECT_DIR$/Aufgabe4/SquirrelFood/SquirrelFood.java" />
         <option value="$PROJECT_DIR$/Aufgabe4/Fruit/FreshFruit.java" />
+        <option value="$PROJECT_DIR$/Aufgabe4/TestA4.java" />
+        <option value="$PROJECT_DIR$/Aufgabe4/SquirrelFood/DurableSquirrelFood.java" />
         <option value="$PROJECT_DIR$/Aufgabe4/SquirrelFood/PerishableSquirrelFood.java" />
         <option value="$PROJECT_DIR$/Aufgabe4/SquirrelFood/VegetarienSquirrelFood.java" />
-        <option value="$PROJECT_DIR$/Aufgabe4/TestA4.java" />
+        <option value="$PROJECT_DIR$/Aufgabe4/SquirrelFood/SquirrelFood.java" />
       </list>
     </option>
   </component>
@@ -193,6 +176,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -278,8 +263,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -704,7 +687,13 @@
       <option name="project" value="LOCAL" />
       <updated>1479847731382</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="adapted testA4, refecord Fruit name">
+      <created>1479848413680</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1479848413680</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -716,29 +705,29 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.60784316" sideWeight="0.50907713" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47549018" sideWeight="0.49092284" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3797277" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -760,7 +749,8 @@
     <MESSAGE value="implementanting squirrel food packetch" />
     <MESSAGE value="remde Classes that got lost while commiting" />
     <MESSAGE value="deleted test" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted test" />
+    <MESSAGE value="adapted testA4, refecord Fruit name" />
+    <option name="LAST_COMMIT_MESSAGE" value="adapted testA4, refecord Fruit name" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1091,14 +1081,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Aufgabe4/SquirrelFood/SquirrelFood.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5221843">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Aufgabe4/Fruit/FreshFruit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1123,37 +1105,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Aufgabe4/SquirrelFood/DurableSquirrelFood.java">
+    <entry file="file://$PROJECT_DIR$/Aufgabe4/TestA4.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-          <folding />
+          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aufgabe4/SquirrelFood/SquirrelFood.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+          <folding>
+            <marker date="1479849584808" expanded="true" signature="103:199" placeholder="/**...*/" />
+            <marker date="1479849584808" expanded="true" signature="230:314" placeholder="/**...*/" />
+            <marker date="1479849584808" expanded="true" signature="339:421" placeholder="/**...*/" />
+            <marker date="1479849584808" expanded="true" signature="445:535" placeholder="/**...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Aufgabe4/SquirrelFood/VegetarienSquirrelFood.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+          <folding>
+            <marker date="1479849584787" expanded="true" signature="215:378" placeholder="/**...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Aufgabe4/SquirrelFood/PerishableSquirrelFood.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Aufgabe4/TestA4.java">
+    <entry file="file://$PROJECT_DIR$/Aufgabe4/SquirrelFood/DurableSquirrelFood.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82245433">
-          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.40753424">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>

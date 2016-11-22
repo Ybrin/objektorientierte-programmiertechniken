@@ -9,6 +9,15 @@ public class VegetarienSquirrelFood extends DurableSquirrelFood{
     double fat;
     double protein;
 
+    /**
+     * Constructor Vegatarian Food
+     *
+     * @param eat_within_days
+     * @param crab
+     * @param fat
+     * @param protein
+     * @autor Aniela
+     */
     public VegetarienSquirrelFood(int eat_within_days, double crab, double fat, double protein) {
         this.eat_within_days = eat_within_days;
         this.crab = crab;
@@ -37,6 +46,12 @@ public class VegetarienSquirrelFood extends DurableSquirrelFood{
         return protein;
     }
 
+    /**
+     * can be used for storage, if the foods lifetime is long anouth
+     *
+     * @return true/false
+     * @autor Aniela
+     */
     @Override
     public boolean toBeBuried() {
         boolean buriable=false;

@@ -10,6 +10,15 @@ public class PerishableSquirrelFood extends DurableSquirrelFood{
     double fat;
     double protein;
 
+    /**
+     * Constructor of Perishable food
+     *
+     * @param eat_within_days
+     * @param crab
+     * @param fat
+     * @param protein
+     * @autor Aniela
+     */
     public PerishableSquirrelFood(int eat_within_days, double crab, double fat, double protein) {
         this.eat_within_days = eat_within_days;
         this.crab = crab;
@@ -37,6 +46,11 @@ public class PerishableSquirrelFood extends DurableSquirrelFood{
         return protein;
     }
 
+    /**
+     * can't be used for storage
+     *
+     * @return false
+     */
     @Override
     public boolean toBeBuried() {
         return false;
