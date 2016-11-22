@@ -8,6 +8,5 @@ public class test {
         SquirrelFood s = new VegetarienSquirrelFood(3,2,1,2);
         DurableSquirrelFood v = new VegetarienSquirrelFood(1,3,3,3);
 
-
     }
 }
