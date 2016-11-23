@@ -7,7 +7,7 @@ public interface SquirrelFood {
     /**
      * days till uneatable
      *
-     * @return amount of days
+     * @return amount of days until this food is uneatable
      * @autor Aniela
      */
     int eatWithinDays();

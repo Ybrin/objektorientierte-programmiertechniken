@@ -1,6 +1,12 @@
+import cone.Cone;
+import fruit.DryFruit;
+import nut.Nut;
 import squirrelFood.DurableSquirrelFood;
 import squirrelFood.VegetarianSquirrelFood;
 import squirrelFood.PerishableSquirrelFood;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Sabrina on 22.11.2016.
@@ -84,5 +90,19 @@ import squirrelFood.PerishableSquirrelFood;
 public class Test {
 
     public static void main(String[] args) {
+
+        List<DurableSquirrelFood> durableSquirrelFoods = new ArrayList<DurableSquirrelFood>();
+
+        durableSquirrelFoods.add(new Nut(100, 0.1, 0.4, 0.5));
+        durableSquirrelFoods.add(new DryFruit(80, 0.2, 0.2, 0.6, 8, 12));
+        durableSquirrelFoods.add(new Cone(120, 0.2, 0.3, 0.5, 30));
+
+        for (DurableSquirrelFood d : durableSquirrelFoods) {
+            // A special feature of every DurableSquirrelFood
+            System.out.println(d.toBeBuried());
+
+            // Every DurableSquirrelFood is a subtype of SquirrelFood but eatWithinDays iss dependent upon bury
+            System.out.println(d.eatWithinDays());
+        }
     }
 }

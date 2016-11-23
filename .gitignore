@@ -1,2 +1,4 @@
 # All .idea directories
 .idea/
+*.class
+out/
