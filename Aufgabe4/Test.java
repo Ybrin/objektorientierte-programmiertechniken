@@ -1,5 +1,7 @@
 import cone.Cone;
 import fruit.DryFruit;
+import fruit.FreshFruit;
+import fruit.Fruit;
 import nut.Nut;
 import squirrelFood.DurableSquirrelFood;
 import squirrelFood.VegetarianSquirrelFood;
@@ -96,6 +98,7 @@ public class Test {
         durableSquirrelFoods.add(new Nut(100, 0.1, 0.4, 0.5));
         durableSquirrelFoods.add(new DryFruit(80, 0.2, 0.2, 0.6, 8, 12));
         durableSquirrelFoods.add(new Cone(120, 0.2, 0.3, 0.5, 30));
+        durableSquirrelFoods.add(new DurableSquirrelFood(40, 0.3, 0.4, 0.3, true));
 
         for (DurableSquirrelFood d : durableSquirrelFoods) {
             // A special feature of every DurableSquirrelFood
@@ -103,6 +106,16 @@ public class Test {
 
             // Every DurableSquirrelFood is a subtype of SquirrelFood but eatWithinDays iss dependent upon bury
             System.out.println(d.eatWithinDays());
+        }
+
+        List<Fruit> fruits = new ArrayList<Fruit>();
+
+        fruits.add(new FreshFruit(20, 0.4, 0.4, 0.2, 2, 5));
+        fruits.add(new DryFruit(20, 0.4, 0.4, 0.2, 2, 5));
+
+        for (Fruit fruit : fruits) {
+            System.out.println(fruit.fromMonth());
+            System.out.println(fruit.toMonth());
         }
     }
 }

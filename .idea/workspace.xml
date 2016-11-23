@@ -2,34 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="034e73b8-0f49-4e4e-a5a9-3a98b0160215" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/oopH32/Cone.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/oopH32/Nut.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/oopH32/OpenSeam.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/oopH32/TestA4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/oopH32/animals/Animal.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/oopH32/animals/DeathReason.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/oopH32/animals/Predator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/oopH32/animals/Sex.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/oopH32/animals/Squirrel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/oopH32/animals/Strategy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/oopH32/animals/SurvivalStrategies.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/oopH32/calculation/Calculation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/oopH32/ecosystem/Ecosystem.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/oopH32/fruit/DriedMushroom.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/oopH32/fruit/Mushroom.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/oopH32/simulation/Simulation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/oopH32/squirrelFood/VegetarienSquirrelFood.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/oopH32/Test.class" afterPath="$PROJECT_DIR$/out/production/oopH32/Test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/oopH32/fruit/DryFruit.class" afterPath="$PROJECT_DIR$/out/production/oopH32/fruit/DryFruit.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/oopH32/fruit/FreshFruit.class" afterPath="$PROJECT_DIR$/out/production/oopH32/fruit/FreshFruit.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/oopH32/fruit/Fruit.class" afterPath="$PROJECT_DIR$/out/production/oopH32/fruit/Fruit.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/oopH32/squirrelFood/DurableSquirrelFood.class" afterPath="$PROJECT_DIR$/out/production/oopH32/squirrelFood/DurableSquirrelFood.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/oopH32/squirrelFood/PerishableSquirrelFood.class" afterPath="$PROJECT_DIR$/out/production/oopH32/squirrelFood/PerishableSquirrelFood.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe4/Test.java" afterPath="$PROJECT_DIR$/Aufgabe4/Test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aufgabe4/squirrelFood/SquirrelFood.java" afterPath="$PROJECT_DIR$/Aufgabe4/squirrelFood/SquirrelFood.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/oopH32/.info" afterPath="$PROJECT_DIR$/out/production/oopH32/.info" />
     </list>
     <ignored path="oopH32.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,20 +25,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Test.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Aufgabe4/Test.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="456">
-              <caret line="104" column="48" selection-start-line="104" selection-start-column="48" selection-end-line="104" selection-end-column="48" />
+              <caret line="117" column="48" selection-start-line="117" selection-start-column="48" selection-end-line="117" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3687#3708#0" expanded="true" />
+                <element signature="e#4436#4443#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
@@ -159,8 +132,8 @@
         <option value="$PROJECT_DIR$/Aufgabe4/nut/Nut.java" />
         <option value="$PROJECT_DIR$/Aufgabe4/nut/OpenSeam.java" />
         <option value="$PROJECT_DIR$/Aufgabe4/squirrelFood/SquirrelFood.java" />
-        <option value="$PROJECT_DIR$/Aufgabe4/Test.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Aufgabe4/Test.java" />
       </list>
     </option>
   </component>
@@ -200,8 +173,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -308,7 +280,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -627,6 +600,7 @@
       <setting name="cmdLine" value="run-app" />
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
+      <setting name="depsClasspath" value="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
@@ -792,6 +766,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -842,6 +822,7 @@
       <workItem from="1478679053864" duration="1664000" />
       <workItem from="1479289880218" duration="2138000" />
       <workItem from="1479863341965" duration="8112000" />
+      <workItem from="1479897465102" duration="160000" />
     </task>
     <task id="LOCAL-00001" summary="implemented&#10;Ecosystem">
       <created>1477490680795</created>
@@ -910,15 +891,14 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34774000" />
+    <option name="totallyTimeSpent" value="34934000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="727" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="727" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.60784316" sideWeight="0.50907713" order="7" side_tool="true" content_ui="tabs" />
@@ -930,7 +910,6 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22578125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32522798" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -940,7 +919,9 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32522798" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1022,7 +1003,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1072,7 +1052,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="47" column="12" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1101,7 +1080,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="53" column="132" selection-start-line="53" selection-start-column="132" selection-end-line="53" selection-end-column="132" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1144,7 +1122,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1229,7 +1206,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="94" column="3" selection-start-line="93" selection-start-column="2" selection-end-line="94" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1237,26 +1213,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Aufgabe4/fruit/DriedMushroom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Aufgabe4/fruit/Mushroom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Aufgabe4/fruit/DriedMushroom.java" />
+    <entry file="file://$PROJECT_DIR$/Aufgabe4/fruit/Mushroom.java" />
     <entry file="file://$PROJECT_DIR$/Aufgabe4/squirrelFood/VegetarianSquirrelFood.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1345,22 +1306,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Aufgabe4/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="104" column="48" selection-start-line="104" selection-start-column="48" selection-end-line="104" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3687#3708#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aufgabe4/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="117" column="48" selection-start-line="117" selection-start-column="48" selection-end-line="117" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4436#4443#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
