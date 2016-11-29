@@ -1,7 +1,7 @@
 /**
  * Created by Aniela on 24.11.2016.
  */
-public interface Before {
+public interface Before<A> {
 
 
     /**
@@ -16,5 +16,5 @@ public interface Before {
      * @param o an Object of tipe Before
      * @autor Aniela
      */
-    public boolean before(Before o);
+    public boolean before(A o);
 }
