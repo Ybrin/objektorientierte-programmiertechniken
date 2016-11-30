@@ -31,11 +31,16 @@ public class ClusteredNode<T, U> {
     public boolean hasNext(T cluster) {
         ClusteredNode<T, U> current = next;
         while (current != null) {
-            if (current.clusters == null) continue;
+            if (current.clusters == null) {
+                current = current.next;
+                continue;
+            }
 
             for (T c : current.clusters) {
                 if (cluster.equals(c)) return true;
             }
+
+            current = current.next;
         }
 
         return false;

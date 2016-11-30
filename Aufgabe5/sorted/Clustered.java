@@ -213,6 +213,7 @@ public class Clustered<A, B extends Before<? super B>> extends Sorted<B> {
             while (currentElement.getNext() != null) {
                 if (currentElement.getNext().hasCluster(cluster)) {
                     currentElement.setNext(currentElement.getNext().getNext());
+                    return;
                 }
                 currentElement = currentElement.getNext();
             }
@@ -238,7 +239,7 @@ public class Clustered<A, B extends Before<? super B>> extends Sorted<B> {
     }
 
     public Iterator<B> iterator(A cluster) {
-        return new ClusteredIterator<B>();
+        return new ClusteredIterator<B>(cluster);
     }
 
     private boolean hasNext(int after, A cluster) {
@@ -287,7 +288,7 @@ public class Clustered<A, B extends Before<? super B>> extends Sorted<B> {
             if (cluster == null) {
                 return cursor < fixedSize;
             } else {
-                return Clustered.this.hasNext(cursor - 1, cluster);
+                return Clustered.this.hasNext((cursor - 1 >= 0) ? cursor - 1 : 0, cluster);
             }
         }
 
