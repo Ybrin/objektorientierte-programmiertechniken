@@ -52,10 +52,10 @@ import java.util.List;
     * eatWithinDays() is not dependent upon another value (bury)
     * ----> DurableSquirrelFood is also not a PerishableSquirrelFood because of same reason.
     *
-    * PerishableSquirrelFood and DurableSquirrelFood are also not a Fruit because a Fruit has the
+    * PerishableSquirrelFood and DurableSquirrelFood are also not a main.Fruit because a main.Fruit has the
     * fromMonth() and toMonth() values which represent when these types of food can be found.
     * The types PerishableSquirrelFood and DurableSquirrelFood don't need these values so they
-    * can't be a subclass of Fruit.
+    * can't be a subclass of main.Fruit.
     *
     * PerishableSquirrelFood and DurableSquirrelFood are also not a Cone because a Cone has the method
     * seams which returns the number of seams within this cone which is not required (and would be very wrong)
@@ -64,15 +64,15 @@ import java.util.List;
      */
 
     /*
-    * ******* Nut / Fruit / Cone *******
+    * ******* main.Nut / main.Fruit / Cone *******
     * Nuts are not Fruits because Fruits have the values fromMonth() and toMonth() which
-    * are not needed by Nuts and would be wrong. So Nut is not a subtype of Fruit.
+    * are not needed by Nuts and would be wrong. So main.Nut is not a subtype of main.Fruit.
     *
-    * Nut is also not a subtype of PerishableSquirrelFood because eatWithinDays() within
+    * main.Nut is also not a subtype of PerishableSquirrelFood because eatWithinDays() within
     * PerishableSquirrelFood is not dependent upon the value bury, which Fruits depend upon due to
     * the fact that they are subtypes of DurableSquirrelFood
     *
-    * Fruit is not a Nut for the same exact reason.
+    * main.Fruit is not a main.Nut for the same exact reason.
     *
     * FreshFruit is a PerishableSquirrelFood and can therefore not be a DurableSquirrelFood because that
     * would mean eatWithinDays() must be dependent from the value bury but this is wrong for
@@ -82,9 +82,9 @@ import java.util.List;
     * PerishableSquirrelFood disallows that indirectly.
     *
     * Cones are not Fruits because Fruits have the values fromMonth() and toMonth() which
-    * are not needed by Cones and would be wrong. So Cone is not a subtype of Fruit.
+    * are not needed by Cones and would be wrong. So Cone is not a subtype of main.Fruit.
     *
-    * Cone is also not a subtype of Nut because bury must be false for a Cone and true for a Nut which
+    * Cone is also not a subtype of main.Nut because bury must be false for a Cone and true for a main.Nut which
     * makes them incompatible.
      */
 
