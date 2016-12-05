@@ -1,17 +1,15 @@
 package versteck;
 
 /**
- * Created by Sabrina on 04.12.2016.
+ * Created by Sabrina on 05.12.2016.
  */
-public abstract class Versteckabs implements Versteck{
+public abstract class BaseVersteck implements Versteck {
+    protected int nummer;
+    protected double volumen;
+    protected Nahrungsmittel futter;
 
-    private int nummer;
-    private double volumen;
-    private Nahrungsmittel futter;
-
-    private int anzahlNuesse = 0;
-    private double gewichtSamen = 0;
-
+    protected int anzahlNuesse = 0;
+    protected double gewichtSamen = 0;
 
     /**
      * Erzeugt ein neues Versteck
@@ -20,7 +18,7 @@ public abstract class Versteckabs implements Versteck{
      * @param volumen       Volumen des Verstecks
      * @param futter        Nahrungsmittelart des Verstecks
      */
-    public Versteckabs(int nummer, double volumen, Nahrungsmittel futter){
+    public BaseVersteck(int nummer, double volumen, Nahrungsmittel futter){
         this.nummer = nummer;
         this.volumen = volumen;
         this.futter = futter;
@@ -44,10 +42,10 @@ public abstract class Versteckabs implements Versteck{
      * @param d Anzahl der Nuesse oder Gewicht der Samen, die zusätzlich im Versteck gelagert werden
      */
     public void futterErhoehehn(double d){
-        if(futter == Nahrungsmittel.NUESSE){
-            this.anzahlNuesse += (int) d;
-        } else if (futter == Nahrungsmittel.SAMEN){
+        if (futter == Nahrungsmittel.SAMEN){
             this.gewichtSamen +=  d;
+        } else if (futter == Nahrungsmittel.NUESSE) {
+            this.anzahlNuesse += (int) d;
         }
     }
 
@@ -66,9 +64,12 @@ public abstract class Versteckabs implements Versteck{
         }
     }
 
+    /**
+     * returnt die Anzahl der Nuesse oder das Gewicht der Samen
+     *
+     * @return Anzahl der Nuesse oder Gewicht der Samen
+     */
     public double nahrungsmittelMenge(){
         return (futter == Nahrungsmittel.NUESSE ? this.anzahlNuesse : this.gewichtSamen);
     }
-
-
 }

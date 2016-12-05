@@ -1,10 +1,9 @@
 package versteck;
 
 /**
- * Created by Sabrina on 04.12.2016.
+ * Created by Sabrina on 05.12.2016.
  */
 public interface Versteck {
-
     /**
      * returnt die Nummer des Verstecks
      * @return Nummer des Verstecks
@@ -40,22 +39,4 @@ public interface Versteck {
      * @return Nahrungsmittelmenge, die sich im Versteck befindet
      */
     public double nahrungsmittelMenge();
-
-    /**
-     * returnt die Hoehe des Baumverstecks
-     * @return Hoehe des Baumverstecks
-     */
-    public int getHoehe();
-
-    /**
-     * returnt den Namen der Baumart die fuer das Baumversteck genutzt wird
-     * @return Name der Baumart
-     */
-    public String getBaumart();
-
-    /**
-     * returnt die Entfernung des Verstecks zum Nest
-     * @return Entfernung zum Nest
-     */
-    public double entfernungNest();
 }

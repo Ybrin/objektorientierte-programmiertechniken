@@ -1,13 +1,12 @@
 package versteck;
 
 /**
- * Created by Sabrina on 04.12.2016.
+ * Created by Sabrina on 05.12.2016.
  */
-public class Baumversteck extends Versteckabs{
+public class Baumversteck extends BaseVersteck implements IBaumversteck {
 
     private String baumart;
     private int hoehe;
-
 
     /**
      * Erzeugt ein neues Baumversteck
@@ -31,7 +30,4 @@ public class Baumversteck extends Versteckabs{
     public String getBaumart(){
         return this.baumart;
     }
-
-    public double entfernungNest(){return 0;}
-
 }

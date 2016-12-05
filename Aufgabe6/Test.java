@@ -16,8 +16,12 @@ public class Test {
         versteck1.nahrungsmittelartAendern(Nahrungsmittel.SAMEN);
         versteck1.futterErhoehehn(78);
         System.out.println(versteck1.nahrungsmittelMenge());
-        System.out.println(versteck1.getBaumart());
-        System.out.println(versteck1.getHoehe());
+
+        if (versteck1 instanceof IBaumversteck) {
+            IBaumversteck baumversteck = (IBaumversteck) versteck1;
+            System.out.println(baumversteck.getBaumart());
+            System.out.println(baumversteck.getHoehe());
+        }
 
         System.out.println(versteck2.nummer());
         System.out.println(versteck2.volumen());
@@ -25,7 +29,10 @@ public class Test {
         versteck2.nahrungsmittelartAendern(Nahrungsmittel.NUESSE);
         versteck2.futterErhoehehn(66);
         System.out.println(versteck2.nahrungsmittelMenge());
-        System.out.println(versteck2.entfernungNest());
 
+        if (versteck2 instanceof IErdversteck) {
+            IErdversteck erdversteck = (IErdversteck) versteck2;
+            System.out.println(erdversteck.entfernungNest());
+        }
     }
 }

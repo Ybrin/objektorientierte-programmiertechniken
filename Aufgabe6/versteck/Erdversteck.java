@@ -3,7 +3,7 @@ package versteck;
 /**
  * Created by Sabrina on 04.12.2016.
  */
-public class Erdversteck extends Versteckabs{
+public class Erdversteck extends BaseVersteck implements IErdversteck {
 
     private double xKoor;
     private double yKoor;
@@ -26,13 +26,4 @@ public class Erdversteck extends Versteckabs{
     public double entfernungNest(){
         return Math.sqrt(Math.pow(xKoor, 2)+Math.pow(yKoor,2));
     }
-
-    public int getHoehe(){
-        return 0;
-    }
-
-    public String getBaumart(){
-        return "";
-    }
-
 }
