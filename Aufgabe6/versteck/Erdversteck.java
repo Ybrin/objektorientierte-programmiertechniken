@@ -8,43 +8,31 @@ public class Erdversteck extends Versteckabs{
     private double xKoor;
     private double yKoor;
 
-    private Nahrungsmittel futter;
-
-    private int anzahlNuesse;
-    private double gewichtSamen;
-
-    public Erdversteck(int nummer, double volumen, double xKoor, double yKoor, Nahrungsmittel futter){
-        super(nummer, volumen);
+    /**
+     * Erzeugt ein neues Erdversteck
+     *
+     * @param nummer        Nummer des Verstecks
+     * @param volumen       Volumen des Verstecks
+     * @param futter        Nahrungsmittelart des Verstecks
+     * @param xKoor         x-Koordinate relativ zum Nest gesehen
+     * @param yKoor         y-Koordinate relativ zum Nest gesehen
+     */
+    public Erdversteck(int nummer, double volumen, Nahrungsmittel futter, double xKoor, double yKoor){
+        super(nummer, volumen, futter);
         this.xKoor = xKoor;
         this.yKoor = yKoor;
-        this.futter = futter;
     }
 
     public double entfernungNest(){
         return Math.sqrt(Math.pow(xKoor, 2)+Math.pow(yKoor,2));
     }
 
-    public void change(double d){
-        if(futter == Nahrungsmittel.NUESSE){
-            this.anzahlNuesse+=d;
-        } else if (futter == Nahrungsmittel.SAMEN){
-            this.gewichtSamen+=d;
-        }
+    public int getHoehe(){
+        return 0;
     }
 
-    public void nahrungsmittelartAendern(Nahrungsmittel futter){
-        this.futter = futter;
-        if(futter == Nahrungsmittel.NUESSE){
-            this.gewichtSamen = 0;
-        }
-        else {
-            this.anzahlNuesse = 0;
-        }
+    public String getBaumart(){
+        return "";
     }
-
-    public double getNahrungsmittel(){
-        return (this.futter == Nahrungsmittel.NUESSE ? this.anzahlNuesse : this.gewichtSamen);
-    }
-
 
 }

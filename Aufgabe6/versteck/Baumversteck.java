@@ -8,8 +8,18 @@ public class Baumversteck extends Versteckabs{
     private String baumart;
     private int hoehe;
 
-    public Baumversteck(int nummer, double volumen, String baumart, int hoehe){
-        super(nummer, volumen);
+
+    /**
+     * Erzeugt ein neues Baumversteck
+     *
+     * @param nummer        Nummer des Verstecks
+     * @param volumen       Volumen des Verstecks
+     * @param futter        Nahrungsmittelart des Verstecks
+     * @param baumart       Baumart des Baumverstecks
+     * @param hoehe         Hoehe des Baumverstecks
+     */
+    public Baumversteck(int nummer, double volumen, Nahrungsmittel futter, String baumart, int hoehe){
+        super(nummer, volumen, futter);
         this.baumart = baumart;
         this.hoehe = hoehe;
     }
@@ -21,5 +31,7 @@ public class Baumversteck extends Versteckabs{
     public String getBaumart(){
         return this.baumart;
     }
+
+    public double entfernungNest(){return 0;}
 
 }
