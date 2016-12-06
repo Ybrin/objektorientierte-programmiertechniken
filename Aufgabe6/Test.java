@@ -5,6 +5,12 @@ import versteck.*;
  */
 public class Test {
 
+   /*
+   ---------------------aufteilung---------------------
+   Sabrina: versteck packet + Verstecke Test
+   Aniela: Eichhoernchen + EichhoernchenKnoten + Eichhoernchen Test
+   Koray: Kolonie + Kolonie Test
+    */
     public static void main(String[] args) {
 
         /*
@@ -87,5 +93,11 @@ public class Test {
         System.out.println("gesamt menge "+(eichhoernchen1.maximalAnzahlSamen(null)+eichhoernchen1.maximalAnzahlNuesse(null)));
         eichhoernchen1.versteckEntfernen(versteck3);
         System.out.println("gesamt menge ohne 3 "+(eichhoernchen1.maximalAnzahlSamen(null)+eichhoernchen1.maximalAnzahlNuesse(null)));
+
+        /*
+        ------------------------------------ Kolonie Test ------------------------------------------
+         */
+
+        
     }
 }
