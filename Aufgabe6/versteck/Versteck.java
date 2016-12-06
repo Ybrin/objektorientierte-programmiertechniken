@@ -39,4 +39,10 @@ public interface Versteck {
      * @return Nahrungsmittelmenge, die sich im Versteck befindet
      */
     public double nahrungsmittelMenge();
+
+    /**
+     * verringert die Futtermenge im Versteck um die Anzahl menge
+     * @param menge hoehe der ab zu ziehenden Futter menge
+     */
+    public void futterVerringern(double menge);
 }

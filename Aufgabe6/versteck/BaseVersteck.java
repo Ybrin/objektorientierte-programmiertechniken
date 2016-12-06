@@ -36,6 +36,19 @@ public abstract class BaseVersteck implements Versteck {
         return this.futter;
     }
 
+
+    /**
+     * verringert die Futtermenge im Versteck um die Anzahl menge
+     * @param menge hoehe der ab zu ziehenden Futter menge
+     */
+    public void futterVerringern(double menge){
+        if (futter == Nahrungsmittel.SAMEN){
+            this.gewichtSamen -=  menge;
+        } else if (futter == Nahrungsmittel.NUESSE) {
+            this.anzahlNuesse -= (int) menge;
+        }
+    }
+
     /**
      * Erhoeht das gelagerte Futter
      *
