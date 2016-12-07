@@ -1,9 +1,8 @@
+package eichhoernchen;
+
 import versteck.*;
 
 import java.lang.reflect.Type;
-import java.net.InterfaceAddress;
-import java.util.Map;
-import java.util.Optional;
 
 /**
  * Created by Sabrina on 04.12.2016.
@@ -13,16 +12,17 @@ public class Eichhoernchen {
     /**
      * Fix festgelegter name, wird einmalig im konstruktor definiert
      */
-    final String name;
+    private final String name;
+
     /**
      * das erste Versteck des Eichhoernchens
      */
-    private EichhoernchenKnoten erstes=null;
+    private EichhoernchenKnoten erstes = null;
 
     /**
-     * Erzeugt ein neues eichhoernchen mit fixem unenderbaren namen
+     * Erzeugt ein neues eichhoernchen mit dem gegebenen Namen
      *
-     * @param name
+     * @param name Der Name des Eichhoernchens
      */
     public Eichhoernchen(String name) {
         this.name = name;
@@ -33,10 +33,10 @@ public class Eichhoernchen {
      * dieses darf nicht null sein
      * wenn eins==null dann wird das versteck an erste stelle gesetzt
      *
-     * @param versteck hinzu zu fügendes Versteck
+     * @param versteck Das Versteck welches hinzugefügt werden soll
      */
-    public void versteckHinzufuegen(Versteck versteck){
-        if(versteck!=null) {
+    public void versteckHinzufuegen(Versteck versteck) {
+        if (versteck != null) {
             if (erstes == null) {
                 erstes = new EichhoernchenKnoten(versteck);
             } else {
@@ -51,13 +51,13 @@ public class Eichhoernchen {
 
     /**
      * Die methode entfernt das angegebene versteck
-     * dies geschieht durch überspringen des angegebenen Verstecks
+     * dies geschieht durch ueberspringen des angegebenen Verstecks
      * Versteck darf nicht null sein
      *
-     * @param versteck zu löschendes Versteck
+     * @param versteck zu loeschendes Versteck
      */
-    public void versteckEntfernen(Versteck versteck){
-        if(versteck!=null) {
+    public void versteckEntfernen(Versteck versteck) {
+        if (versteck != null) {
             if (erstes != null) {
                 if (erstes.getVersteck().nummer() == versteck.nummer()) {
                     erstes = null;
@@ -70,7 +70,7 @@ public class Eichhoernchen {
                     }
                     if (knotten != letzter) {
                         if (knotten.getNechstes() == null) {
-                            if (knotten.getNechstes().getVersteck().nummer() == versteck.nummer()) {
+                            if (knotten.getVersteck().nummer() == versteck.nummer()) {
                                 letzter.setNechstes(null);
                             }
                         } else {
@@ -87,24 +87,25 @@ public class Eichhoernchen {
      * durch nahrungsmittel festgelegten Nahrungsmittel arten
      * wenn nahrungsmittel null ist, wird das gesamt verfügbare Volumen aus gegeben
      *
-     * @param nahrungsmittel
+     * @param nahrungsmittel Die Art von Nahrungsmitteln welche miteinbezogen werden soll in die Berechnung.
+     *                       Darf nicht null sein.
      * @return durchschnittliche Volumen
      */
-    public double durchschnittlichesVolumenNahrungsmittel(Nahrungsmittel nahrungsmittel){
-        double durchschnitt =0.0;
-        double zaehler=0.0;
-        if(erstes!=null) {
+    public double durchschnittlichesVolumenNahrungsmittel(Nahrungsmittel nahrungsmittel) {
+        double durchschnitt = 0.0;
+        double zaehler = 0.0;
+        if (erstes != null) {
             EichhoernchenKnoten knoten = erstes;
-            if(nahrungsmittel==null){
-                while (knoten!= null) {
+            if (nahrungsmittel == null) {
+                while (knoten != null) {
                     durchschnitt += knoten.getVersteck().volumen();
                     knoten = knoten.getNechstes();
                     zaehler++;
                 }
-                if(durchschnitt>0){
+                if (durchschnitt > 0) {
                     durchschnitt = durchschnitt / zaehler;
                 }
-            }else {
+            } else {
                 while (knoten != null) {
                     if (knoten.getVersteck().futter().equals(nahrungsmittel)) {
                         durchschnitt += knoten.getVersteck().volumen();
@@ -112,11 +113,11 @@ public class Eichhoernchen {
                     }
                     knoten = knoten.getNechstes();
                 }
-                if(durchschnitt>0){
+                if (durchschnitt > 0) {
                     durchschnitt = durchschnitt / zaehler;
                 }
             }
-        }else {
+        } else {
             return 0;
         }
         return durchschnitt;
@@ -130,69 +131,70 @@ public class Eichhoernchen {
      * @param versteck Typ für den gesamt volumen berechnent werden soll
      * @return durchschnittliche Volumen
      */
-    public double durchschnittlichesVolumenTyp(Type versteck){
-        double volumen=0;
-        double anzahl=0;
+    public double durchschnittlichesVolumenTyp(Type versteck) {
+        double volumen = 0;
+        double anzahl = 0;
 
 
-        if(erstes!=null) {
+        if (erstes != null) {
             EichhoernchenKnoten knoten = erstes;
-            if(versteck==null){
+            if (versteck == null) {
 
-                while (knoten!= null) {
+                while (knoten != null) {
                     volumen += knoten.getVersteck().volumen();
                     knoten = knoten.getNechstes();
                     anzahl++;
                 }
                 volumen = volumen / anzahl;
 
-            }if(versteck == IBaumversteck.class){
-                while (knoten!=null){
+            }
+            if (versteck == IBaumversteck.class) {
+                while (knoten != null) {
                     if (knoten.getVersteck() instanceof IBaumversteck) {
                         volumen += knoten.getVersteck().volumen();
                         anzahl++;
                     }
-                    knoten=knoten.getNechstes();
+                    knoten = knoten.getNechstes();
                 }
-            }else if(versteck == IErdversteck.class){
-                while (knoten!=null){
+            } else if (versteck == IErdversteck.class) {
+                while (knoten != null) {
                     if (knoten.getVersteck() instanceof IErdversteck) {
                         volumen += knoten.getVersteck().volumen();
                         anzahl++;
                     }
-                    knoten=knoten.getNechstes();
+                    knoten = knoten.getNechstes();
                 }
             }
-        }else {
+        } else {
             return 0;
         }
-        return volumen/anzahl;
+        return anzahl != 0 ? volumen / anzahl : 0;
     }
 
     /**
-     * Berschnet die Durchschnitts hohe aller Baum Verstecke des eichhoernchens
+     * Berechnet die durchschnittshoehe aller Baumverstecke des eichhoernchens
      *
-     * @return durchschnitts hohe
+     * @return durchschnitts hoehe
      */
-    public double durchschnittlicheHoehe(){
-        double hohe=0;
-        double anzahl=0;
+    public double durchschnittlicheHoehe() {
+        double hohe = 0;
+        double anzahl = 0;
 
-        if(erstes!=null) {
+        if (erstes != null) {
             EichhoernchenKnoten knoten = erstes;
-            while (knoten!=null){
-                if (knoten.getVersteck()instanceof IBaumversteck) {
-                    IBaumversteck baumversteck=(Baumversteck)knoten.getVersteck();
-                    hohe=baumversteck.getHoehe();
+            while (knoten != null) {
+                if (knoten.getVersteck() instanceof IBaumversteck) {
+                    IBaumversteck baumversteck = (Baumversteck) knoten.getVersteck();
+                    hohe = baumversteck.getHoehe();
                     anzahl++;
                 }
-                knoten =knoten.getNechstes();
+                knoten = knoten.getNechstes();
             }
 
-        }else {
+        } else {
             return 0;
         }
-        return hohe/anzahl;
+        return anzahl != 0 ? hohe / anzahl : 0;
     }
 
     /**
@@ -205,32 +207,32 @@ public class Eichhoernchen {
      */
     public double durchschnittlicheEntfernung(Nahrungsmittel nahrungsmittel) {
         double entfernung = 0;
-        double anzahl=0;
+        double anzahl = 0;
         if (erstes != null) {
             EichhoernchenKnoten knoten = erstes;
-            if(nahrungsmittel==null){
+            if (nahrungsmittel == null) {
                 while (knoten != null) {
                     if (knoten.getVersteck() instanceof IErdversteck) {
-                            entfernung+=((IErdversteck) knoten.getVersteck()).entfernungNest();
+                        entfernung += ((IErdversteck) knoten.getVersteck()).entfernungNest();
                         anzahl++;
                     }
                     knoten = knoten.getNechstes();
                 }
-            }else{
-                    while (knoten!= null) {
-                        if (knoten.getVersteck() instanceof IErdversteck) {
-                            if(knoten.getVersteck().futter().equals(nahrungsmittel)){
-                                entfernung+=((IErdversteck) knoten.getVersteck()).entfernungNest();
-                                anzahl++;
-                            }
+            } else {
+                while (knoten != null) {
+                    if (knoten.getVersteck() instanceof IErdversteck) {
+                        if (knoten.getVersteck().futter().equals(nahrungsmittel)) {
+                            entfernung += ((IErdversteck) knoten.getVersteck()).entfernungNest();
+                            anzahl++;
                         }
-                        knoten = knoten.getNechstes();
                     }
+                    knoten = knoten.getNechstes();
+                }
             }
-        }else {
+        } else {
             return 0;
         }
-        return entfernung/anzahl;
+        return anzahl != 0 ? entfernung / anzahl : 0;
     }
 
     /**
@@ -241,7 +243,7 @@ public class Eichhoernchen {
      * @param versteck
      * @return durchschnitt nuesse
      */
-    public double durchschnittlicheAnzahlNuesse (Type versteck) {
+    public double durchschnittlicheAnzahlNuesse(Type versteck) {
         double nuesse = 0;
         double anzahl = 0;
 
@@ -249,16 +251,16 @@ public class Eichhoernchen {
             EichhoernchenKnoten knoten = erstes;
             if (versteck == null) {
                 while (knoten != null) {
-                    if(knoten.getVersteck().futter().equals(Nahrungsmittel.NUESSE)){
-                        nuesse+=knoten.getVersteck().nahrungsmittelMenge();
+                    if (knoten.getVersteck().futter().equals(Nahrungsmittel.NUESSE)) {
+                        nuesse += knoten.getVersteck().nahrungsmittelMenge();
                         anzahl++;
                     }
-                    knoten=knoten.getNechstes();
+                    knoten = knoten.getNechstes();
                 }
-            }else{
-                if(versteck == IErdversteck.class) {
-                    while (knoten!= null) {
-                        if (knoten.getVersteck() instanceof IErdversteck){
+            } else {
+                if (versteck == IErdversteck.class) {
+                    while (knoten != null) {
+                        if (knoten.getVersteck() instanceof IErdversteck) {
                             if (knoten.getVersteck().futter().equals(Nahrungsmittel.NUESSE)) {
                                 nuesse += knoten.getVersteck().nahrungsmittelMenge();
                                 anzahl++;
@@ -267,9 +269,9 @@ public class Eichhoernchen {
                         knoten = knoten.getNechstes();
                     }
                 }
-                if(versteck == IBaumversteck.class) {
-                    while (knoten!= null) {
-                        if (knoten.getVersteck() instanceof IBaumversteck){
+                if (versteck == IBaumversteck.class) {
+                    while (knoten != null) {
+                        if (knoten.getVersteck() instanceof IBaumversteck) {
                             if (knoten.getVersteck().futter().equals(Nahrungsmittel.NUESSE)) {
                                 nuesse += knoten.getVersteck().nahrungsmittelMenge();
                                 anzahl++;
@@ -279,10 +281,10 @@ public class Eichhoernchen {
                     }
                 }
             }
-        }else {
+        } else {
             return 0;
         }
-        return nuesse/anzahl;
+        return anzahl != 0 ? nuesse / anzahl : 0;
     }
 
     /**
@@ -293,7 +295,7 @@ public class Eichhoernchen {
      * @param versteck
      * @return durchschnitt Samen
      */
-    public double durchschnittlicheAnzahlSamen (Type versteck){
+    public double durchschnittlicheAnzahlSamen(Type versteck) {
         double samen = 0;
         double anzahl = 0;
 
@@ -301,16 +303,16 @@ public class Eichhoernchen {
             EichhoernchenKnoten knoten = erstes;
             if (versteck == null) {
                 while (knoten != null) {
-                    if(knoten.getVersteck().futter().equals(Nahrungsmittel.SAMEN)){
-                        samen+=knoten.getVersteck().nahrungsmittelMenge();
+                    if (knoten.getVersteck().futter().equals(Nahrungsmittel.SAMEN)) {
+                        samen += knoten.getVersteck().nahrungsmittelMenge();
                         anzahl++;
                     }
-                    knoten=knoten.getNechstes();
+                    knoten = knoten.getNechstes();
                 }
-            }else{
-                if(versteck == IErdversteck.class) {
+            } else {
+                if (versteck == IErdversteck.class) {
                     while (knoten != null) {
-                        if (knoten.getVersteck() instanceof IErdversteck){
+                        if (knoten.getVersteck() instanceof IErdversteck) {
                             if (knoten.getVersteck().futter().equals(Nahrungsmittel.SAMEN)) {
                                 samen += knoten.getVersteck().nahrungsmittelMenge();
                                 anzahl++;
@@ -319,9 +321,9 @@ public class Eichhoernchen {
                         knoten = knoten.getNechstes();
                     }
                 }
-                if(versteck == IBaumversteck.class) {
+                if (versteck == IBaumversteck.class) {
                     while (knoten != null) {
-                        if (knoten.getVersteck() instanceof IBaumversteck){
+                        if (knoten.getVersteck() instanceof IBaumversteck) {
                             if (knoten.getVersteck().futter().equals(Nahrungsmittel.SAMEN)) {
                                 samen += knoten.getVersteck().nahrungsmittelMenge();
                                 anzahl++;
@@ -331,10 +333,10 @@ public class Eichhoernchen {
                     }
                 }
             }
-        }else {
+        } else {
             return 0;
         }
-        return samen/anzahl;
+        return samen / anzahl;
     }
 
 
@@ -342,25 +344,28 @@ public class Eichhoernchen {
      * berechnet die gesamt anzahl aller nuesse in abhängigkeit des Versteck Typs
      * bei versteck ==null werden alle Verstecks Typen berücksichtigt
      *
+     * Unterstuetzt die typen IErdversteck und IBaumversteck und null. Ist "versteck" keines davon,
+     * returnt diese methode 0
+     *
      * @param versteck
      * @return gesamt anzahl aller Nuesse
      */
-    public double maximalAnzahlNuesse(Type versteck){
+    public double maximalAnzahlNuesse(Type versteck) {
         double nuesse = 0;
         if (erstes != null) {
             EichhoernchenKnoten knoten = erstes;
 
             if (versteck == null) {
-                while (knoten!= null) {
-                    if(knoten.getVersteck().futter().equals(Nahrungsmittel.NUESSE)){
-                        nuesse+=knoten.getVersteck().nahrungsmittelMenge();
+                while (knoten != null) {
+                    if (knoten.getVersteck().futter().equals(Nahrungsmittel.NUESSE)) {
+                        nuesse += knoten.getVersteck().nahrungsmittelMenge();
                     }
-                    knoten=knoten.getNechstes();
+                    knoten = knoten.getNechstes();
                 }
-            }else{
-                if(versteck == IErdversteck.class) {
-                    while (knoten!= null) {
-                        if (knoten.getVersteck() instanceof IErdversteck){
+            } else {
+                if (versteck == IErdversteck.class) {
+                    while (knoten != null) {
+                        if (knoten.getVersteck() instanceof IErdversteck) {
                             if (knoten.getVersteck().futter().equals(Nahrungsmittel.NUESSE)) {
                                 nuesse += knoten.getVersteck().nahrungsmittelMenge();
                             }
@@ -368,9 +373,9 @@ public class Eichhoernchen {
                         knoten = knoten.getNechstes();
                     }
                 }
-                if(versteck == IBaumversteck.class) {
-                    while (knoten!= null) {
-                        if (knoten.getVersteck() instanceof IBaumversteck){
+                if (versteck == IBaumversteck.class) {
+                    while (knoten != null) {
+                        if (knoten.getVersteck() instanceof IBaumversteck) {
                             if (knoten.getVersteck().futter().equals(Nahrungsmittel.NUESSE)) {
                                 nuesse += knoten.getVersteck().nahrungsmittelMenge();
                             }
@@ -379,7 +384,7 @@ public class Eichhoernchen {
                     }
                 }
             }
-        }else {
+        } else {
             return 0;
         }
         return nuesse;
@@ -389,25 +394,28 @@ public class Eichhoernchen {
      * berechnet die gesamt anzahl aller Samen in abhängigkeit des Versteck Typs
      * bei versteck ==null werden alle Verstecks Typen berücksichtigt
      *
-     * @param versteck
+     * Unterstuetzt die typen IErdversteck und IBaumversteck und null. Ist "versteck" keines davon,
+     * returnt diese methode 0
+     *
+     * @param versteck Der typ
      * @return gesamt anzahl aller Samen
      */
-    public double maximalAnzahlSamen(Type versteck){
+    public double maximalAnzahlSamen(Type versteck) {
         double samen = 0;
 
         if (erstes != null) {
             EichhoernchenKnoten knoten = erstes;
             if (versteck == null) {
-                while (knoten!= null) {
-                    if(knoten.getVersteck().futter().equals(Nahrungsmittel.SAMEN)){
-                        samen+=knoten.getVersteck().nahrungsmittelMenge();
+                while (knoten != null) {
+                    if (knoten.getVersteck().futter().equals(Nahrungsmittel.SAMEN)) {
+                        samen += knoten.getVersteck().nahrungsmittelMenge();
                     }
-                    knoten=knoten.getNechstes();
+                    knoten = knoten.getNechstes();
                 }
-            }else{
-                if(versteck == IErdversteck.class) {
-                    while (knoten!= null) {
-                        if (knoten.getVersteck() instanceof IErdversteck){
+            } else {
+                if (versteck == IErdversteck.class) {
+                    while (knoten != null) {
+                        if (knoten.getVersteck() instanceof IErdversteck) {
                             if (knoten.getVersteck().futter().equals(Nahrungsmittel.SAMEN)) {
                                 samen += knoten.getVersteck().nahrungsmittelMenge();
                             }
@@ -415,9 +423,9 @@ public class Eichhoernchen {
                         knoten = knoten.getNechstes();
                     }
                 }
-                if(versteck == IBaumversteck.class) {
+                if (versteck == IBaumversteck.class) {
                     while (knoten != null) {
-                        if (knoten.getVersteck() instanceof IBaumversteck){
+                        if (knoten.getVersteck() instanceof IBaumversteck) {
                             if (knoten.getVersteck().futter().equals(Nahrungsmittel.SAMEN)) {
                                 samen += knoten.getVersteck().nahrungsmittelMenge();
                             }
@@ -426,7 +434,7 @@ public class Eichhoernchen {
                     }
                 }
             }
-        }else {
+        } else {
             return 0;
         }
         return samen;
@@ -435,14 +443,14 @@ public class Eichhoernchen {
 
     /**
      * aendert den inhalt des angegebenen Verstecks auf nahrungsmittel
-     * nahrungsmittel darf nicht null sein
+     * nahrungsmittel darf nicht null sein, versteck darf nicht null sein
      *
      * @param versteck
      * @param nahrungsmittel
      */
-    public void neuerInhalt(Versteck versteck, Nahrungsmittel nahrungsmittel){
+    public void neuerInhalt(Versteck versteck, Nahrungsmittel nahrungsmittel) {
         int number = versteck.nummer();
-        if(nahrungsmittel!=null) {
+        if (nahrungsmittel != null) {
             if (erstes != null) {
                 EichhoernchenKnoten knoten = erstes;
                 while (knoten != null) {
@@ -463,9 +471,9 @@ public class Eichhoernchen {
      * @param menge
      * @param versteck
      */
-    public void verringereMenge(double menge, Versteck versteck){
+    public void verringereMenge(double menge, Versteck versteck) {
         int number = versteck.nummer();
-        if(versteck!=null) {
+        if (versteck != null) {
             if (erstes != null) {
                 EichhoernchenKnoten knoten = erstes;
                 while (knoten != null) {
@@ -490,9 +498,9 @@ public class Eichhoernchen {
      * @param menge
      * @param versteck
      */
-    public void erhoeheMenge(double menge, Versteck versteck){
+    public void erhoeheMenge(double menge, Versteck versteck) {
         int number = versteck.nummer();
-        if(versteck!=null) {
+        if (versteck != null) {
             if (erstes != null) {
                 EichhoernchenKnoten knoten = erstes;
                 while (knoten != null) {
@@ -512,10 +520,10 @@ public class Eichhoernchen {
      * @param versteck
      * @return gesamte menge
      */
-    public double menge(Versteck versteck){
+    public double menge(Versteck versteck) {
         int number = versteck.nummer();
-        double menge=0.0;
-        if(versteck!=null) {
+        double menge = 0.0;
+        if (versteck != null) {
             if (erstes != null) {
                 EichhoernchenKnoten knoten = erstes;
                 while (knoten != null) {
@@ -531,5 +539,65 @@ public class Eichhoernchen {
         return menge;
     }
 
+    /**
+     * Gibt den Namen dieses Eichhoernchens zurueck
+     *
+     * @return Der Name dieses Eichhoernchens
+     */
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+
+        builder.append("******* ").append(name).append(" *******");
+        builder.append("\n");
+        builder.append("Durchschnittliches Volumen gesamt: ").append(durchschnittlichesVolumenTyp(null));
+        builder.append("\n");
+        builder.append("Durchschnittliche Anzahl Nüsse gesamt: ").append(durchschnittlicheAnzahlNuesse(null));
+        builder.append("\n");
+        builder.append("Durchschnittliche Anzahl Samen gesamt: ").append(durchschnittlicheAnzahlSamen(null));
+        builder.append("\n");
+        builder.append("Durchschnittliche Entfernung Nüsse: ").append(durchschnittlicheEntfernung(Nahrungsmittel.NUESSE));
+        builder.append("\n");
+        builder.append("Durchschnittliche Entfernung Samen: ").append(durchschnittlicheEntfernung(Nahrungsmittel.SAMEN));
+        builder.append("\n");
+        builder.append("Durchschnittliche Höhe: ").append(durchschnittlicheHoehe());
+        builder.append("\n");
+        builder.append("Durchschnittliches Volumen Nüsse gesamt: ").append(durchschnittlichesVolumenNahrungsmittel(Nahrungsmittel.NUESSE));
+        builder.append("\n");
+        builder.append("Durchschnittliches Volumen Samen gesamt: ").append(durchschnittlichesVolumenNahrungsmittel(Nahrungsmittel.SAMEN));
+        builder.append("\n");
+        builder.append("Maximale Anzahl Nüsse gesamt: ").append(maximalAnzahlNuesse(null));
+        builder.append("\n");
+        builder.append("Maximale Anzahl Samen gesamt: ").append(maximalAnzahlSamen(null));
+        builder.append("\n");
+        builder.append("\n");
+
+        builder.append("--- Verstecke ---");
+        builder.append("\n");
+
+        EichhoernchenKnoten current = erstes;
+        while (current != null) {
+            Versteck v = current.getVersteck();
+
+            builder.append("-- Versteck Nummer: ").append(v.nummer());
+            builder.append("\n");
+            builder.append("Volumen: ").append(v.volumen());
+            builder.append("\n");
+            builder.append("Futterart: ").append(v.futter().toString());
+            builder.append("\n");
+            builder.append("Nahrungsmittelmenge: ").append(v.nahrungsmittelMenge());
+            builder.append("\n");
+            builder.append("Entfernung vom Nest aus: ").append(v.entfernungNest());
+            builder.append("\n");
+
+            current = current.getNechstes();
+        }
+
+        return builder.toString();
+    }
 }
 

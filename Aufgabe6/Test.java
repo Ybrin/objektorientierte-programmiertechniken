@@ -1,3 +1,5 @@
+import eichhoernchen.Eichhoernchen;
+import kolonie.Kolonie;
 import versteck.*;
 
 /**
@@ -8,8 +10,8 @@ public class Test {
    /*
    ---------------------aufteilung---------------------
    Sabrina: versteck packet + Verstecke Test
-   Aniela: Eichhoernchen + EichhoernchenKnoten + Eichhoernchen Test
-   Koray: Kolonie + Kolonie Test
+   Aniela: Eichhoernchen + EichhoernchenKnoten + eichhoernchen.Eichhoernchen Test
+   Koray: kolonie.Kolonie + kolonie.Kolonie Test + toString bei Eichhoernchen + überarbeiten von Testfällen
     */
     public static void main(String[] args) {
 
@@ -17,7 +19,7 @@ public class Test {
         ------------------------------ Verstecke Test ----------------------------------
          */
 
-        Versteck versteck1 = new Baumversteck(1, 8.4, Nahrungsmittel.NUESSE, "Buche", 14);
+        Versteck versteck1 = new Baumversteck(1, 8.4, Nahrungsmittel.NUESSE, "Buche", 14, 12.0, 13.7);
         Versteck versteck2 = new Erdversteck(2, 17.4, Nahrungsmittel.SAMEN, 32.7, 19.0);
 
         System.out.println(versteck1.nummer());
@@ -95,9 +97,45 @@ public class Test {
         System.out.println("gesamt menge ohne 3 "+(eichhoernchen1.maximalAnzahlSamen(null)+eichhoernchen1.maximalAnzahlNuesse(null)));
 
         /*
-        ------------------------------------ Kolonie Test ------------------------------------------
+        ------------------------------------ kolonie.Kolonie Test ------------------------------------------
          */
 
-        
+        System.out.println();
+        System.out.println();
+
+        Eichhoernchen eichhoernchen3 = new Eichhoernchen("Lena");
+        eichhoernchen3.versteckHinzufuegen(versteck3);
+        Eichhoernchen eichhoernchen4 = new Eichhoernchen("Lisa");
+        eichhoernchen4.versteckHinzufuegen(versteck1);
+
+        Kolonie kolonie1 = new Kolonie("kolonieone");
+
+        kolonie1.addSquirrel(eichhoernchen1);
+        kolonie1.addSquirrel(eichhoernchen2);
+        kolonie1.addSquirrel(eichhoernchen3);
+        kolonie1.addSquirrel(eichhoernchen4);
+
+        kolonie1.removeSquirrel(eichhoernchen1);
+        kolonie1.removeSquirrel("Milo");
+        kolonie1.removeSquirrel("---ShouldNotBeInTheListAndShouldDoNothing---");
+
+        kolonie1.printDescription();
+
+        eichhoernchen4.versteckEntfernen(versteck1);
+
+        eichhoernchen3.versteckEntfernen(versteck1);
+        eichhoernchen3.versteckEntfernen(versteck2);
+
+        Kolonie kolonie2 = new Kolonie("kolonietwo");
+
+        kolonie2.addSquirrel(eichhoernchen1);
+        kolonie2.addSquirrel(eichhoernchen2);
+        kolonie2.addSquirrel(eichhoernchen4);
+
+        kolonie2.removeSquirrel(eichhoernchen3);
+        kolonie2.removeSquirrel("Lena");
+        kolonie2.removeSquirrel("---ShouldNotBeInTheListAndShouldDoNothing---");
+
+        kolonie2.printDescription();
     }
 }

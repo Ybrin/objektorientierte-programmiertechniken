@@ -4,31 +4,40 @@ package versteck;
  * Created by Sabrina on 05.12.2016.
  */
 public abstract class BaseVersteck implements Versteck {
-    protected int nummer;
-    protected double volumen;
-    protected Nahrungsmittel futter;
 
-    protected int anzahlNuesse = 0;
-    protected double gewichtSamen = 0;
+    private int nummer;
+    private double volumen;
+    private Nahrungsmittel futter;
+
+    private int anzahlNuesse = 0;
+    private double gewichtSamen = 0;
+
+    private double xKoor;
+    private double yKoor;
 
     /**
      * Erzeugt ein neues Versteck
      *
-     * @param nummer        Nummer des Verstecks
-     * @param volumen       Volumen des Verstecks
-     * @param futter        Nahrungsmittelart des Verstecks
+     * @param nummer  Nummer des Verstecks
+     * @param volumen Volumen des Verstecks
+     * @param futter  Nahrungsmittelart des Verstecks
+     * @param xKoor   x-Koordinate relativ zum Nest gesehen
+     * @param yKoor   y-Koordinate relativ zum Nest gesehen
      */
-    public BaseVersteck(int nummer, double volumen, Nahrungsmittel futter){
+    public BaseVersteck(int nummer, double volumen, Nahrungsmittel futter, double xKoor, double yKoor) {
         this.nummer = nummer;
         this.volumen = volumen;
         this.futter = futter;
+
+        this.xKoor = xKoor;
+        this.yKoor = yKoor;
     }
 
-    public int nummer(){
+    public int nummer() {
         return this.nummer;
     }
 
-    public double volumen(){
+    public double volumen() {
         return this.volumen;
     }
 
@@ -36,14 +45,19 @@ public abstract class BaseVersteck implements Versteck {
         return this.futter;
     }
 
+    public double entfernungNest(){
+        return Math.sqrt(Math.pow(xKoor, 2)+Math.pow(yKoor,2));
+    }
+
 
     /**
      * verringert die Futtermenge im Versteck um die Anzahl menge
+     *
      * @param menge hoehe der ab zu ziehenden Futter menge
      */
-    public void futterVerringern(double menge){
-        if (futter == Nahrungsmittel.SAMEN){
-            this.gewichtSamen -=  menge;
+    public void futterVerringern(double menge) {
+        if (futter == Nahrungsmittel.SAMEN) {
+            this.gewichtSamen -= menge;
         } else if (futter == Nahrungsmittel.NUESSE) {
             this.anzahlNuesse -= (int) menge;
         }
@@ -54,9 +68,9 @@ public abstract class BaseVersteck implements Versteck {
      *
      * @param d Anzahl der Nuesse oder Gewicht der Samen, die zusätzlich im Versteck gelagert werden
      */
-    public void futterErhoehehn(double d){
-        if (futter == Nahrungsmittel.SAMEN){
-            this.gewichtSamen +=  d;
+    public void futterErhoehehn(double d) {
+        if (futter == Nahrungsmittel.SAMEN) {
+            this.gewichtSamen += d;
         } else if (futter == Nahrungsmittel.NUESSE) {
             this.anzahlNuesse += (int) d;
         }
@@ -65,14 +79,19 @@ public abstract class BaseVersteck implements Versteck {
     /**
      * Aendert die Nahrungsmittelart, die im Versteck gelagert wird
      *
+     * Alte Informationen gehen verloren
+     *
+     * Macht nichts wenn bereits diese Nahrungsmittelart gesetzt ist
+     *
      * @param futter Nahrungsmittelart, die ab jetzt im Versteck gelagert wird
      */
-    public void nahrungsmittelartAendern(Nahrungsmittel futter){
+    public void nahrungsmittelartAendern(Nahrungsmittel futter) {
+        if (futter == this.futter) return;
+
         this.futter = futter;
-        if(futter == Nahrungsmittel.NUESSE){
+        if (futter == Nahrungsmittel.NUESSE) {
             this.gewichtSamen = 0;
-        }
-        else if (futter == Nahrungsmittel.SAMEN){
+        } else if (futter == Nahrungsmittel.SAMEN) {
             this.anzahlNuesse = 0;
         }
     }
@@ -82,7 +101,14 @@ public abstract class BaseVersteck implements Versteck {
      *
      * @return Anzahl der Nuesse oder Gewicht der Samen
      */
-    public double nahrungsmittelMenge(){
-        return (futter == Nahrungsmittel.NUESSE ? this.anzahlNuesse : this.gewichtSamen);
+    public double nahrungsmittelMenge() {
+        switch (futter) {
+            case NUESSE:
+                return anzahlNuesse;
+            case SAMEN:
+                return gewichtSamen;
+        }
+
+        return 0;
     }
 }

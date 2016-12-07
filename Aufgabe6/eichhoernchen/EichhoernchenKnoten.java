@@ -1,3 +1,5 @@
+package eichhoernchen;
+
 import versteck.Versteck;
 
 /**
@@ -9,7 +11,7 @@ public class EichhoernchenKnoten {
     private EichhoernchenKnoten nechstes;
 
     /**
-     * Erstellt einen neuen EichhoernchenKnoten mit dem Versteck versteck
+     * Erstellt einen neuen eichhoernchen.EichhoernchenKnoten mit dem Versteck versteck
      * versteck darf nicht null sein
      *
      * @param versteck
@@ -19,7 +21,7 @@ public class EichhoernchenKnoten {
     }
 
     /**
-     * Gibt das Verseck des aktuellen EichhoernchenKnoten aus
+     * Gibt das Verseck des aktuellen eichhoernchen.EichhoernchenKnoten aus
      *
      * @return versteck
      */
@@ -28,19 +30,19 @@ public class EichhoernchenKnoten {
     }
 
     /**
-     * Gibt den EichhoernchenKnoten aus der als naechstes in der Klasse gespeichert ist
+     * Gibt den eichhoernchen.EichhoernchenKnoten aus der als naechstes in der Klasse gespeichert ist
      * falls nicht festgelegt ist dieser null
      *
-     * @return EichhoernchenKnoten
+     * @return eichhoernchen.EichhoernchenKnoten
      */
     public EichhoernchenKnoten getNechstes() {
         return nechstes;
     }
 
     /**
-     * Methode zum festlegen des naechsten EichhoernchenKnoten in der Klasse
+     * Methode zum festlegen des naechsten eichhoernchen.EichhoernchenKnoten in der Klasse
      *
-     * @param nechstes
+     * @param nechstes Das naechste Element
      */
     public void setNechstes(EichhoernchenKnoten nechstes) {
         this.nechstes = nechstes;

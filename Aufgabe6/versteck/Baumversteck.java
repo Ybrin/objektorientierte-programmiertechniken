@@ -17,8 +17,8 @@ public class Baumversteck extends BaseVersteck implements IBaumversteck {
      * @param baumart       Baumart des Baumverstecks
      * @param hoehe         Hoehe des Baumverstecks
      */
-    public Baumversteck(int nummer, double volumen, Nahrungsmittel futter, String baumart, int hoehe){
-        super(nummer, volumen, futter);
+    public Baumversteck(int nummer, double volumen, Nahrungsmittel futter, String baumart, int hoehe, double x, double y){
+        super(nummer, volumen, futter, x, y);
         this.baumart = baumart;
         this.hoehe = hoehe;
     }

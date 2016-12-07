@@ -24,12 +24,16 @@ public interface Versteck {
 
     /**
      * ändert die Nahrungsmittelart, die im Versteck gelagert wird
-     * @param futter Nahrungsmittelart, die ab jetzt im Versteck gelagert wird
+     * Alte Informationen gehen verloren
+     * @param futter Nahrungsmittelart, die ab jetzt im Versteck gelagert wird, ungleich null
      */
     public void nahrungsmittelartAendern(Nahrungsmittel futter);
 
     /**
-     * erhoeht das Gewicht der im Varsteck gelagerten Samen oder die Anzahl der im Versteck gelagerten Nuesse
+     * erhoeht das Gewicht der im Versteck gelagerten Samen oder die Anzahl der im Versteck gelagerten Nuesse
+     * Wenn das Nahrungsmittel Nuesse ist erwartet diese Methode als Parameter eine ganze Zahl um die Anzahl an
+     * Nuessen zu erhöhen. Wenn es Samen sind, erwartet die Methode eine Zahl die das Gewicht der Samen, um die
+     * der derzeitige Stand erhöht werden soll beschreibt (beliebig genau).
      * @param d Anzahl der Nuesse oder Gewicht der Samen, die zusätzlich im Versteck gelagert werden
      */
     public void futterErhoehehn(double d);
@@ -45,4 +49,11 @@ public interface Versteck {
      * @param menge hoehe der ab zu ziehenden Futter menge
      */
     public void futterVerringern(double menge);
+
+    /**
+     * returnt die Entfernung zum Nest des Eichhoernchens
+     *
+     * @return Entfernung zum Nest
+     */
+    public double entfernungNest();
 }
