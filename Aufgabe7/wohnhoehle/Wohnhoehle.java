@@ -5,6 +5,16 @@ package wohnhoehle;
  */
 public class Wohnhoehle {
 
-    private double volume;
+    private double volumen;
     private int monatsmiete;
+
+    public Wohnhoehle(double volumen, int monatsmiete){
+        this.monatsmiete = monatsmiete;
+        this.volumen = volumen;
+    }
+
+    public double getVolume(){
+        return this.volumen;
+    }
+
 }

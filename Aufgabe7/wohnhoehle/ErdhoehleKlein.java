@@ -5,5 +5,7 @@ package wohnhoehle;
  */
 public class ErdhoehleKlein extends BaseErdhoehle {
 
-
+    public ErdhoehleKlein(double volumen, int monatsmiete, double durchmesser){
+        super(volumen, monatsmiete, durchmesser);
+    }
 }

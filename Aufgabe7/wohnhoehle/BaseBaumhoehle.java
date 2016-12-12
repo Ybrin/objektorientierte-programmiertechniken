@@ -6,4 +6,9 @@ package wohnhoehle;
 public class BaseBaumhoehle extends Wohnhoehle {
 
     private int hoehe;
+
+    public BaseBaumhoehle(double volumen, int monatsmiete, int hoehe){
+        super(volumen, monatsmiete);
+        this.hoehe = hoehe;
+    }
 }
