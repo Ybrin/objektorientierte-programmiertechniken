@@ -8,4 +8,8 @@ public class BaumhoehleGross extends BaseBaumhoehle {
     public BaumhoehleGross(double volumen, int monatsmiete, int hoehe){
         super(volumen, monatsmiete, hoehe);
     }
+
+    public boolean canHostGrauhoernchen() {
+        return true;
+    }
 }

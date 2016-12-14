@@ -17,4 +17,23 @@ public class Wohnhoehle {
         return this.volumen;
     }
 
+    public int getMonatsmiete() {
+        return this.monatsmiete;
+    }
+
+    public boolean canHostEichhoernchen() {
+        return false;
+    }
+
+    public boolean canHostGrauhoernchen() {
+        return false;
+    }
+
+    public boolean canHostZwerghamster() {
+        return false;
+    }
+
+    public boolean canHostZiesel() {
+        return false;
+    }
 }

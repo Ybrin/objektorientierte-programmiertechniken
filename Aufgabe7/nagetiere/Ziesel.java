@@ -1,15 +1,20 @@
 package nagetiere;
 
-import wohnhoehle.ErdhoehleGross;
-import wohnhoehle.Wohnungsamt;
+import wohnhoehle.Wohnhoehle;
+
+import java.util.List;
 
 /**
  * Created by Sabrina on 12.12.2016.
  */
 public class Ziesel extends Nagetier {
 
+    @Override
+    public Wohnhoehle vermiete(List<Wohnhoehle> wohnhoehleList) {
+        for (Wohnhoehle w : wohnhoehleList) {
+            if (w.canHostZiesel()) return w;
+        }
 
-    private ErdhoehleGross wohnhoehle;
-
-    
+        return null;
+    }
 }

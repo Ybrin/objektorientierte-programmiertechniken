@@ -12,4 +12,7 @@ public class ErdhoehleGross extends BaseErdhoehle {
         super(volumen, monatsmiete, durchmesser);
     }
 
+    public boolean canHostZiesel() {
+        return true;
+    }
 }
